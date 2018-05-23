@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>查看统计</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/echarts.min.js"></script>
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+<!--header-->
+	<div class="navigation">
+			<div class="container-fluid">
+				<nav class="pull">
+					<ul>
+						<li><a  href="/HostelWorld/home?id=0">主页</a></li>
+						<li><a  href="about.html">关于我们</a></li>
+						<li><a  href="/HostelWorld/home?id=5">个人页面</a></li>
+					</ul>
+				</nav>			
+			</div>
+		</div>
+
+<div class="header">
+	<div class="container">
+		<!--logo-->
+			<div class="logo">
+				<h1><a href="index.html">客栈之家</a></h1>
+			</div>
+		<!--//logo-->
+		<div class="top-nav">
+			<ul class="right-icons">
+				<li><a  href="http://localhost:8080/HostelWorld/logout"><i class="glyphicon glyphicon-user"> </i>注销</a></li>
+				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a></li>
+				
+			</ul>
+			<div class="nav-icon">
+				<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
+						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>
+					</div>	
+			</div>
+		<div class="clearfix"> </div>
+			<!---pop-up-box---->
+				    
+				<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!---//pop-up-box---->
+				<div id="small-dialog" class="mfp-hide">
+					    <!----- tabs-box ---->
+				<div class="sap_tabs">	
+				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+						  <ul class="resp-tabs-list">
+						  	  <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>All Homes</span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>For Sale</span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>For Rent</span></li>
+							  <div class="clearfix"></div>
+						  </ul>				  	 
+						  <div class="resp-tabs-container">
+						  		<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>All Homes</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+								 	<div class="facts">
+									  	<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div>        
+							        </div>
+						  		</div>
+							     <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>For Sale</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+									<div class="facts">									
+										<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div> 
+							        </div>	
+								 </div>									
+							      <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>For Rent</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+									 <div class="facts">
+										<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div> 
+							         </div>	
+							    </div>
+					      </div>
+					 </div>
+					 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+				    	<script type="text/javascript">
+						    $(document).ready(function () {
+						        $('#horizontalTab').easyResponsiveTabs({
+						            type: 'default', //Types: default, vertical, accordion           
+						            width: 'auto', //auto or any width like 600px
+						            fit: true   // 100% fit in a container
+						        });
+						    });
+			  			 </script>	
+				</div>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+					
+	
+		</div>
+		<div class="clearfix"> </div>
+		</div>	
+</div>
+<!--//-->	
+<div class=" banner-buying">
+	<div class=" container">
+	<h3><span>查看营业金额</span></h3> 
+	<!---->
+	<div class="menu-right">
+		 <ul class="menu">
+			<li class="item1"><a href="#"> <span style="margin-right:10px;"></span>选项<i class="glyphicon glyphicon-menu-down"> </i> </a>
+			<ul class="cute">
+				<li class="subitem1"><a href="/HostelWorld/home?id=11">审核申请 </a></li>
+				<li class="subitem4"><a href="/HostelWorld/home?id=21">设置房价 </a></li>
+				<li class="subitem5"><a href="/HostelWorld/home?id=22">查看房价 </a></li>
+				<li class="subitem2"><a href="/HostelWorld/home?id=19">查看统计 </a></li>
+				<li class="subitem3"><a href="/HostelWorld/home?id=17">结算账目</a></li>
+			</ul>
+		</li>
+		</ul>
+	</div>
+	<div class="clearfix"> </div>
+		<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+      		
+	</div>
+</div>
+<!--//header-->
+<div class="contact">
+	<div class="container">
+		 <div style="margin:auto, 0px;">
+		 <h3>查看营业金额</h3>
+		 <div id="eCharts-0" style="width:600px; height:400px; margin-left:240px; margin-top:30px;"></div>
+		 <div id="timeChoose" style="margin-left:320px; margin-top:20px;">时间选择
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios1" value="1周内" checked = "checked">1周内
+			</label>
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios2" value="1月内">1月内
+			</label>
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios3" value="3月内">3月内
+			</label>
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios4" value="1年内">1年内
+			</label>
+		</div>
+		 <div style="margin-left:390px; margin-top:20px; font-family: 'Montserrat-Regular'; font-weight:bold; font-size:32px;">查看营业金额</div>
+		 <div id="eCharts-2" style="width:600px; height:400px; margin-left:240px; margin-top:30px;"></div>
+		 <div id="eCharts-1" style="width:600px; height:400px; margin-left:240px; margin-top:30px;"></div>
+		 
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="container">
+		<div class="footer-top-at">
+			<div class="col-md-3 amet-sed">
+				<h4>Our Company</h4>
+				<ul class="nav-bottom">
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="blog.html">For Sale By Owner Blog</a></li>
+					<li><a href="mobile_app.html">Mobile</a></li>
+					<li><a href="terms.html">Terms & Conditions</a></li>
+					<li><a href="privacy.html">Privacy Policy</a></li>	
+					<li><a href="blog.html">Blog</a></li>
+					
+				</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Work With Us</h4>
+					<ul class="nav-bottom">
+						<li><a href="single.html">Real Estate Brokers</a></li>
+						<li><a href="single.html">Business Development</a></li>
+						<li><a href="single.html">Affiliate Programs</a></li>
+						<li><a href="contact.html">Sitemap</a></li>
+						<li><a href="career.html">Careers</a></li>
+						<li><a href="feedback.html">Feedback</a></li>	
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed">
+				<h4>Customer Support</h4>
+				<p>Mon-Fri, 7AM-7PM </p>
+				<p>Sat-Sun, 8AM-5PM </p>
+				<p>177-869-6559</p>
+					<ul class="nav-bottom">
+						<li><a href="#">Live Chat</a></li>
+						<li><a href="faqs.html">Frequently Asked Questions</a></li>
+						<li><a href="suggestion.html">Make a Suggestion</a></li>
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Property Services</h4>
+				   <ul class="nav-bottom">
+						<li><a href="single.html">Residential Property</a></li>
+						<li><a href="single.html">Commercial Property</a></li>
+						<li><a href="login.html">Login</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="typo.html">Short Codes</a></li>	
+					</ul>	
+					<ul class="social">
+						<li><a href="#"><i> </i></a></li>
+						<li><a href="#"><i class="gmail"> </i></a></li>
+						<li><a href="#"><i class="twitter"> </i></a></li>
+						<li><a href="#"><i class="camera"> </i></a></li>
+						<li><a href="#"><i class="dribble"> </i></a></li>
+					</ul>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--//footer-->
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+    function dataFormatter(obj) {
+        var pList = ['单人间','标准间','套间'];
+        var temp;
+        var dayList = [7, 30, 90, 365];
+        for (var i=0; i<dayList.length; i++) {
+            var day = dayList[i];
+            temp = obj[day];
+            for (var j=0, l=temp.length; j<l; j++) {
+                obj[day][j] = {
+                    name : pList[j],
+                    value : temp[j]
+                }
+            }
+        }
+        return obj;
+    }
+
+    var globalID = 7; // 用来标注是7, 30, 90, 365
+    		
+    $('#optionsRadios1').click(function(){
+		globalID = 7;
+		repaint();
+	});
+    $('#optionsRadios2').click(function(){
+		globalID = 30;
+		repaint();
+	});
+    $('#optionsRadios3').click(function(){
+		globalID = 90;
+		repaint();
+	});
+    $('#optionsRadios4').click(function(){
+		globalID = 365;
+		repaint();
+	});
+
+
+    var dataMap1 = {};
+
+    dataMap1.dataBeijingDongcheng = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+	dataMap1.dataBeijingDongcheng['7sum'] = 0.7592;
+    dataMap1.dataBeijingDongcheng['30sum'] = 3.9978;
+    dataMap1.dataBeijingDongcheng['90sum'] = 14.2316;
+    dataMap1.dataBeijingDongcheng['365sum'] = 58.6932;
+
+    //北京市海淀区
+    dataMap1.dataBeijingHaidian = dataFormatter({
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataBeijingHaidian['7sum'] = 0.8013;
+    dataMap1.dataBeijingHaidian['30sum'] = 3.9218;
+    dataMap1.dataBeijingHaidian['90sum'] = 16.7322;
+    dataMap1.dataBeijingHaidian['365sum'] = 62.1690;
+    
+    //北京市朝阳区
+    dataMap1.dataBeijingChaoyang = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataBeijingChaoyang['7sum'] = 1.0935;
+    dataMap1.dataBeijingChaoyang['30sum'] = 4.3316;
+    dataMap1.dataBeijingChaoyang['90sum'] = 15.7088;
+    dataMap1.dataBeijingChaoyang['365sum'] = 60.8016;
+    
+    //北京地区总
+    dataMap1.dataBeijing = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataBeijing['7sum'] = 0.7592+0.8013+1.0935;
+    dataMap1.dataBeijing['30sum'] = 3.9978+3.9218+4.3316;
+    dataMap1.dataBeijing['90sum'] = 14.2316+16.7322+15.7088;
+    dataMap1.dataBeijing['365sum'] = 58.6932+62.1690+60.8016;
+    
+  //上海市静安区
+    dataMap1.dataShanghaiJingan = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShanghaiJingan['7sum'] = 0.8716;
+    dataMap1.dataShanghaiJingan['30sum'] = 3.2904;
+    dataMap1.dataShanghaiJingan['90sum'] = 8.9834;
+    dataMap1.dataShanghaiJingan['365sum'] = 35.3215;
+    
+    //上海市浦东区
+    dataMap1.dataShanghaiPudong = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShanghaiPudong['7sum'] = 0.6013;
+    dataMap1.dataShanghaiPudong['30sum'] = 2.6218;
+    dataMap1.dataShanghaiPudong['90sum'] = 7.7322;
+    dataMap1.dataShanghaiPudong['365sum'] = 28.1690;
+    
+    //上海市虹口区
+    dataMap1.dataShanghaiHongkou = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShanghaiHongkou['7sum'] = 0.9352;
+    dataMap1.dataShanghaiHongkou['30sum'] = 3.7316;
+    dataMap1.dataShanghaiHongkou['90sum'] = 10.4822;
+    dataMap1.dataShanghaiHongkou['365sum'] = 41.8016;
+    
+    //上海地区总
+    dataMap1.dataShanghai = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShanghai['7sum'] = 0.8716+0.6013+0.9352;
+    dataMap1.dataShanghai['30sum'] = 3.2904+2.6218+3.7316;
+    dataMap1.dataShanghai['90sum'] = 8.9834+7.7322+10.4822;
+    dataMap1.dataShanghai['365sum'] = 35.3215+28.1690+41.8016;
+    
+  	//广州市黄埔区
+  	dataMap1.dataGuangzhouHuangpu = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+	dataMap1.dataGuangzhouHuangpu['7sum'] = 0.8892;
+    dataMap1.dataGuangzhouHuangpu['30sum'] = 3.6578;
+    dataMap1.dataGuangzhouHuangpu['90sum'] = 14.4316;
+    dataMap1.dataGuangzhouHuangpu['365sum'] = 53.6932;
+    
+    //广州市荔湾区
+    dataMap1.dataGuangzhouLiwan = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataGuangzhouLiwan['7sum'] = 1.8363;
+    dataMap1.dataGuangzhouLiwan['30sum'] = 7.9218;
+    dataMap1.dataGuangzhouLiwan['90sum'] = 22.7322;
+    dataMap1.dataGuangzhouLiwan['365sum'] = 86.1690;
+    
+    //广州市白云区
+    dataMap1.dataGuangzhouBaiyun = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataGuangzhouBaiyun['7sum'] = 0.6935;
+    dataMap1.dataGuangzhouBaiyun['30sum'] = 2.7416;
+    dataMap1.dataGuangzhouBaiyun['90sum'] = 8.2084;
+    dataMap1.dataGuangzhouBaiyun['365sum'] = 32.8162;
+    
+    //广州地区总
+    dataMap1.dataGuangzhou = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataGuangzhou['7sum'] = 0.8892+1.8363+0.6935;
+    dataMap1.dataGuangzhou['30sum'] = 3.6578+7.9218+2.7416;
+    dataMap1.dataGuangzhou['90sum'] = 14.4316+22.7322+8.2084;
+    dataMap1.dataGuangzhou['365sum'] = 53.6932+86.1690+32.8162;
+    
+    //深圳市宝安区
+    dataMap1.dataShenzhenBaoan = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShenzhenBaoan['7sum'] = 0.8116;
+    dataMap1.dataShenzhenBaoan['30sum'] = 3.2204;
+    dataMap1.dataShenzhenBaoan['90sum'] = 9.9834;
+    dataMap1.dataShenzhenBaoan['365sum'] = 38.3215;
+    
+    //深圳市福田区
+    dataMap1.dataShenzhenFutian = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShenzhenFutian['7sum'] = 0.4013;
+    dataMap1.dataShenzhenFutian['30sum'] = 1.6218;
+    dataMap1.dataShenzhenFutian['90sum'] = 4.7322;
+    dataMap1.dataShenzhenFutian['365sum'] = 18.9690;
+    
+    //深圳市罗湖区
+    dataMap1.dataShenzhenLuohu = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShenzhenLuohu['7sum'] = 0.5935;
+    dataMap1.dataShenzhenLuohu['30sum'] = 2.3162;
+    dataMap1.dataShenzhenLuohu['90sum'] = 9.0048;
+    dataMap1.dataShenzhenLuohu['365sum'] = 37.8016;
+    
+    //深圳地区总
+    dataMap1.dataShenzhen = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataShenzhen['7sum'] = 0.8116+0.4013+0.5935;
+    dataMap1.dataShenzhen['30sum'] = 3.2204+1.6218+2.3162;
+    dataMap1.dataShenzhen['90sum'] = 9.9834+4.7322;+9.0048;
+    dataMap1.dataShenzhen['365sum'] = 38.3215+18.9690+37.8016;
+    
+    //广东省地区总
+    dataMap1.dataGuangdong = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataGuangdong['7sum'] = dataMap1.dataGuangzhou['7sum'] + dataMap1.dataShenzhen['7sum'];
+    dataMap1.dataGuangdong['30sum'] = dataMap1.dataGuangzhou['30sum'] + dataMap1.dataShenzhen['30sum'];
+    dataMap1.dataGuangdong['90sum'] = dataMap1.dataGuangzhou['90sum'] + dataMap1.dataShenzhen['90sum'];
+    dataMap1.dataGuangdong['365sum'] = dataMap1.dataGuangzhou['365sum'] + dataMap1.dataShenzhen['365sum'];
+
+  	//杭州市西湖区
+  	dataMap1.dataHangzhouXihu = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+	dataMap1.dataHangzhouXihu['7sum'] = 2.7592;
+    dataMap1.dataHangzhouXihu['30sum'] = 10.9978;
+    dataMap1.dataHangzhouXihu['90sum'] = 31.2316;
+    dataMap1.dataHangzhouXihu['365sum'] = 95.6932;
+    
+  	//杭州市萧山区
+  	dataMap1.dataHangzhouXiaoshan = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataHangzhouXiaoshan['7sum'] = 1.1383;
+    dataMap1.dataHangzhouXiaoshan['30sum'] = 4.8234;
+    dataMap1.dataHangzhouXiaoshan['90sum'] = 13.7322;
+    dataMap1.dataHangzhouXiaoshan['365sum'] = 52.6902;
+    
+    //杭州市拱墅区
+    dataMap1.dataHangzhouGongshu = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataHangzhouGongshu['7sum'] = 0.9351;
+    dataMap1.dataHangzhouGongshu['30sum'] = 3.8316;
+    dataMap1.dataHangzhouGongshu['90sum'] = 11.7088;
+    dataMap1.dataHangzhouGongshu['365sum'] = 45.8016;
+    
+    //杭州地区总
+    dataMap1.dataHangzhou = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataHangzhou['7sum'] = 2.7592+1.1383+0.9351;
+    dataMap1.dataHangzhou['30sum'] = 10.9978+4.8234+3.8316;
+    dataMap1.dataHangzhou['90sum'] = 31.2316+13.7322+11.7088;
+    dataMap1.dataHangzhou['365sum'] = 95.6932+52.6902+45.8016;
+    
+    //浙江省地区总
+    dataMap1.dataZhejiang = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataZhejiang['7sum'] = dataMap1.dataHangzhou['7sum'];
+    dataMap1.dataZhejiang['30sum'] = dataMap1.dataHangzhou['30sum'];
+    dataMap1.dataZhejiang['90sum'] = dataMap1.dataHangzhou['90sum'];
+    dataMap1.dataZhejiang['365sum'] = dataMap1.dataHangzhou['365sum'];
+    
+  	//南京市鼓楼区
+  	dataMap1.dataNanjingGulou = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+	dataMap1.dataNanjingGulou['7sum'] = 0.4592;
+    dataMap1.dataNanjingGulou['30sum'] = 1.9978;
+    dataMap1.dataNanjingGulou['90sum'] = 8.2316;
+    dataMap1.dataNanjingGulou['365sum'] = 32.6932;
+    
+  	//南京市栖霞区
+  	dataMap1.dataNanjingQixia = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataNanjingQixia['7sum'] = 0.1213;
+    dataMap1.dataNanjingQixia['30sum'] = 0.9218;
+    dataMap1.dataNanjingQixia['90sum'] = 2.7322;
+    dataMap1.dataNanjingQixia['365sum'] = 8.1690;
+    
+    //南京市浦口区
+    dataMap1.dataNanjingPukou = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataNanjingPukou['7sum'] = 1.1935;
+    dataMap1.dataNanjingPukou['30sum'] = 4.7316;
+    dataMap1.dataNanjingPukou['90sum'] = 14.7088;
+    dataMap1.dataNanjingPukou['365sum'] = 58.8016;
+    
+    //南京地区总
+    dataMap1.dataNanjing = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataNanjing['7sum'] = 0.4592+0.1213+1.1935;
+    dataMap1.dataNanjing['30sum'] = 1.9978+0.9218+4.7316;
+    dataMap1.dataNanjing['90sum'] = 8.2316+2.7322;+14.7088;
+    dataMap1.dataNanjing['365sum'] = 32.6932+8.1690+58.8016;
+    
+ 	//苏州市吴中区
+ 	dataMap1.dataSuzhouWuzhong = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataSuzhouWuzhong['7sum'] = 2.8013;
+    dataMap1.dataSuzhouWuzhong['30sum'] = 11.1892;
+    dataMap1.dataSuzhouWuzhong['90sum'] = 34.7322;
+    dataMap1.dataSuzhouWuzhong['365sum'] = 142.1690;
+    
+  	//苏州市地区总
+  	dataMap1.dataSuzhou = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataSuzhou['7sum'] = dataMap1.dataSuzhouWuzhong['7sum'];
+    dataMap1.dataSuzhou['30sum'] = dataMap1.dataSuzhouWuzhong['30sum'];
+    dataMap1.dataSuzhou['90sum'] = dataMap1.dataSuzhouWuzhong['90sum'];
+    dataMap1.dataSuzhou['365sum'] = dataMap1.dataSuzhouWuzhong['365sum'];
+
+ 	//无锡市滨湖区
+ 	dataMap1.dataWuxiBinhu = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataWuxiBinhu['7sum'] = 1.1340;
+    dataMap1.dataWuxiBinhu['30sum'] = 5.1812;
+    dataMap1.dataWuxiBinhu['90sum'] = 16.7322;
+    dataMap1.dataWuxiBinhu['365sum'] = 66.1690;
+    
+  	//无锡市地区总
+  	dataMap1.dataWuxi = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataWuxi['7sum'] = dataMap1.dataWuxiBinhu['7sum'];
+    dataMap1.dataWuxi['30sum'] = dataMap1.dataWuxiBinhu['30sum'];
+    dataMap1.dataWuxi['90sum'] = dataMap1.dataWuxiBinhu['90sum'];
+    dataMap1.dataWuxi['365sum'] = dataMap1.dataWuxiBinhu['365sum'];
+    
+    //江苏省地区总
+    dataMap1.dataJiangsu = dataFormatter({ 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataJiangsu['7sum'] = dataMap1.dataNanjing['7sum']+dataMap1.dataSuzhou['7sum']+dataMap1.dataWuxi['7sum'];
+    dataMap1.dataJiangsu['30sum'] = dataMap1.dataNanjing['30sum']+dataMap1.dataSuzhou['30sum']+dataMap1.dataWuxi['30sum'];
+    dataMap1.dataJiangsu['90sum'] = dataMap1.dataNanjing['90sum']+dataMap1.dataSuzhou['90sum']+dataMap1.dataWuxi['90sum'];
+    dataMap1.dataJiangsu['365sum'] = dataMap1.dataNanjing['365sum']+dataMap1.dataSuzhou['365sum']+dataMap1.dataWuxi['365sum'];
+    
+    
+    dataMap1.dataLevelTotal = dataFormatter({ // 不同会员等级销售额的总数 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataLevelTotal['7sum'] = 0.2174+0.3904+0.1552;
+    dataMap1.dataLevelTotal['30sum'] = 1.3512+1.8242+1.8196;
+    dataMap1.dataLevelTotal['90sum'] = 4.6942+7.2790+4.0364;
+    dataMap1.dataLevelTotal['365sum'] = 18.9708+29.6852+14.9434;
+    
+    dataMap1.dataLevel0 = dataFormatter({ //会员等级0（非会员）
+        365:[4.0072, 8.0036, 4.9056],
+        90:[0.9862, 1.9960, 1.2316],
+        30:[0.3276, 0.5074, 0.3064],
+        7:[0.0858, 0.1236, 0.0776]
+    });
+    dataMap1.dataLevel0['7sum'] = 0.0858+0.1236+0.0776;
+    dataMap1.dataLevel0['30sum'] = 0.3276+0.5074+0.3064;
+    dataMap1.dataLevel0['90sum'] = 0.9862+1.9960+1.2316;
+    dataMap1.dataLevel0['365sum'] = 4.0072+8.0036+4.9056;
+    
+    dataMap1.dataLevel1 = dataFormatter({ //会员等级1
+        365:[2.2464, 3.7680, 1.4532],
+        90:[0.5616, 0.9458, 0.3078],
+        30:[0.1404, 0.2368, 0.0776],
+        7:[0.0376, 0.0564, 0]
+    });
+    dataMap1.dataLevel1['7sum'] = 0.0376+0.0564+0;
+    dataMap1.dataLevel1['30sum'] = 0.1404+0.2368+0.0776;
+    dataMap1.dataLevel1['90sum'] = 0.5616+0.9458+0.3078;
+    dataMap1.dataLevel1['365sum'] = 2.2464+3.7680+1.4532;
+
+    dataMap1.dataLevel2 = dataFormatter({ //会员等级2
+        365:[4.3580, 6.0096, 1.1652],
+        90:[1.1320, 1.5292, 0.4088],
+        30:[0.2820, 0.3840, 0.1552],
+        7:[0.0564, 0.0768, 0]
+    });
+    dataMap1.dataLevel2['7sum'] = 0.0564+0.0768+0;
+    dataMap1.dataLevel2['30sum'] = 0.2820+0.3840+0.1552;
+    dataMap1.dataLevel2['90sum'] = 1.1320+1.5292+0.4088;
+    dataMap1.dataLevel2['365sum'] = 4.3580+6.0096+1.1652;
+
+    dataMap1.dataLevel3 = dataFormatter({ //会员等级3
+        365:[5.3020, 7.0040, 4.1782],
+        90:[1.3056, 1.6320, 1.2034],
+        30:[0.4320, 0.3840, 0.3104],
+        7:[0.0188, 0.0760, 0.0388]
+    });
+    dataMap1.dataLevel3['7sum'] = 0.0188+0.0760+0.0388;
+    dataMap1.dataLevel3['30sum'] = 0.4320+0.3840+0.3104;
+    dataMap1.dataLevel3['90sum'] = 1.3056+1.6320+1.2034;
+    dataMap1.dataLevel3['365sum'] = 5.3020+7.0040+4.1782;
+    
+    dataMap1.dataLevel4 = dataFormatter({ //会员等级4
+        365:[1.9420, 2.4680, 2.2360],
+        90:[0.4520, 0.6720, 0.5780],
+        30:[0.0940, 0.1680, 0.1552],
+        7:[0.0188, 0.0288, 0.0388]
+    });
+    dataMap1.dataLevel4['7sum'] = 0.0188+0.0288+0.0388;
+    dataMap1.dataLevel4['30sum'] = 0.0940+0.1680+0.1552;
+    dataMap1.dataLevel4['90sum'] = 0.4520+0.6720+0.5780;
+    dataMap1.dataLevel4['365sum'] = 1.9420+2.4680+2.2360;
+
+    dataMap1.dataLevel5 = dataFormatter({ //会员等级5
+        365:[1.1152, 2.4320, 1.0052],
+        90:[0.2568, 0.5040, 0.3068],
+        30:[0.0752, 0.1440, 0.1164],
+        7:[0, 0.0288, 0]
+    });
+    dataMap1.dataLevel5['7sum'] = 0+0.0288+0;
+    dataMap1.dataLevel5['30sum'] = 0.0752+0.1440+0.1164;
+    dataMap1.dataLevel5['90sum'] = 0.2568+0.5040+0.3068;
+    dataMap1.dataLevel5['365sum'] = 1.1152+2.4320+1.0052;
+    
+	repaint();
+
+    
+	function repaint(){
+		var myChart0 = echarts.init(document.getElementById('eCharts-0'));
+		option = {
+			    title: {
+			        text: '日均收入趋势'
+			    },
+			    tooltip: {
+			        trigger: 'axis'
+			    },
+			    legend: {
+			        data:['日均收入','日均会员卡收入','日均现金收入']
+			    },
+			    grid: {
+			        left: '3%',
+			        right: '4%',
+			        bottom: '3%',
+			        containLabel: true
+			    },
+			    toolbox: {
+			        feature: {
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis: {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2016-06','2016-09','2016-12','2017-03','2017-06']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {
+			            name:'日均收入',
+			            type:'line',
+			            stack: '总量',
+			            data:[580, 632, 601, 634, 790]
+			        },
+			        {
+			            name:'日均会员卡收入',
+			            type:'line',
+			            stack: '总量',
+			            data:[430, 460, 401, 434, 430]
+			        },
+			        {
+			            name:'日均现金收入',
+			            type:'line',
+			            stack: '总量',
+			            data:[150, 172, 200, 200, 360]
+			        },
+			    ]
+			};
+		myChart0.setOption(option);
+		
+		
+	    var myChart1 = echarts.init(document.getElementById('eCharts-1'));
+	    
+	    option = {
+   		 title : {
+   	        text: '不同地区的不同酒店的营业金额占比',
+   	        x:'center'
+   	     },
+	   	 tooltip: {
+	         trigger: 'item',
+	         formatter: "{a} <br/>{b}: {c} ({d}%)"
+	     },
+	     legend: {
+	         orient: 'vertical',
+	         x: 'left',
+	         //data:['有优惠计划且预订','有优惠计划但无预订','无优惠计划且预订','无优惠计划且未预订']
+	     },
+	     series: [
+	         {
+	             name:'营业金额',
+	             type:'pie',
+	             selectedMode: 'single',
+	             radius: [0, '30%'],
+
+	             label: {
+	                 normal: {
+	                     position: 'inner'
+	                 }
+	             },
+	             labelLine: {
+	                 normal: {
+	                     show: false
+	                 }
+	             },
+	             data:[
+	            	 {value:dataMap1.dataBeijing[globalID+'sum'], name:'北京市'},
+	            	 {value:dataMap1.dataShanghai[globalID+'sum'], name:'上海市'},
+	                 {value:dataMap1.dataGuangdong[globalID+'sum'], name:'广东省'},
+	                 {value:dataMap1.dataZhejiang[globalID+'sum'], name:'浙江省'},
+	                 {value:dataMap1.dataJiangsu[globalID+'sum'], name:'江苏省'},
+	             ]
+	         },
+	         {
+	             name:'营业金额',
+	             type:'pie',
+	             radius: ['40%', '55%'],
+
+	             data:[
+	            	 {value:dataMap1.dataBeijing[globalID+'sum'], name:'北京市'},
+	                 {value:dataMap1.dataShanghai[globalID+'sum'], name:'上海市'},
+	                 {value:dataMap1.dataGuangzhou[globalID+'sum'], name:'广东省广州市'},
+	                 {value:dataMap1.dataShenzhen[globalID+'sum'], name:'广东省深圳市'},
+	                 {value:dataMap1.dataHangzhou[globalID+'sum'], name:'浙江省杭州市'},
+	                 {value:dataMap1.dataNanjing[globalID+'sum'], name:'江苏省南京市'},
+	                 {value:dataMap1.dataSuzhou[globalID+'sum'], name:'江苏省苏州市'},
+	                 {value:dataMap1.dataWuxi[globalID+'sum'], name:'江苏省无锡市'},
+	             ]
+	         },
+	         {
+	             name:'营业金额',
+	             type:'pie',
+	             radius: ['60%', '80%'],
+
+	             data:[
+	            	 {value:dataMap1.dataBeijingDongcheng[globalID+'sum'], name:'北京市东城区'},
+	            	 {value:dataMap1.dataBeijingHaidian[globalID+'sum'], name:'北京市海淀区'},
+	            	 {value:dataMap1.dataBeijingChaoyang[globalID+'sum'], name:'北京市朝阳区'},
+	                 {value:dataMap1.dataShanghaiJingan[globalID+'sum'], name:'上海市静安区'},
+	                 {value:dataMap1.dataShanghaiPudong[globalID+'sum'], name:'上海市浦东区'},
+	                 {value:dataMap1.dataShanghaiHongkou[globalID+'sum'], name:'上海市虹口区'},
+	                 {value:dataMap1.dataGuangzhouHuangpu[globalID+'sum'], name:'广东省广州市黄浦区'},
+	                 {value:dataMap1.dataGuangzhouLiwan[globalID+'sum'], name:'广东省广州市荔湾区'},
+	                 {value:dataMap1.dataGuangzhouBaiyun[globalID+'sum'], name:'广东省广州市白云区'},
+	                 {value:dataMap1.dataShenzhenBaoan[globalID+'sum'], name:'广东省深圳市宝安区'},
+	                 {value:dataMap1.dataShenzhenFutian[globalID+'sum'], name:'广东省深圳市福田区'},
+	                 {value:dataMap1.dataShenzhenLuohu[globalID+'sum'], name:'广东省深圳市罗湖区'},
+	                 {value:dataMap1.dataHangzhouXihu[globalID+'sum'], name:'浙江省杭州市西湖区'},
+	                 {value:dataMap1.dataHangzhouXiaoshan[globalID+'sum'], name:'浙江省杭州市萧山区'},
+	                 {value:dataMap1.dataHangzhouGongshu[globalID+'sum'], name:'浙江省杭州市拱墅区'},
+	                 {value:dataMap1.dataNanjingGulou[globalID+'sum'], name:'江苏省南京市鼓楼区'},
+	                 {value:dataMap1.dataNanjingQixia[globalID+'sum'], name:'江苏省南京市栖霞区'},
+	                 {value:dataMap1.dataNanjingPukou[globalID+'sum'], name:'江苏省南京市浦口区'},
+	                 {value:dataMap1.dataSuzhouWuzhong[globalID+'sum'], name:'江苏省苏州市吴中区'},
+	                 {value:dataMap1.dataWuxiBinhu[globalID+'sum'], name:'江苏省无锡市滨湖区'},
+	             ]
+	         }
+	     ]
+	 };
+
+	myChart1.setOption(option);
+	
+	var myChart2 = echarts.init(document.getElementById('eCharts-2'));
+    
+    option = {
+   		title : {
+   	        text: '不同会员等级的销售金额占比',
+   	        x:'center'
+   	    },
+   	    tooltip: {
+   	        trigger: 'item',
+   	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+   	    },
+   	    legend: {
+   	        orient: 'vertical',
+   	        x: 'left',
+   	        data:['非会员','会员等级1','会员等级2','会员等级3','会员等级4','会员等级5']
+   	    },
+   	    series: [
+   	        {
+   	            name:'销售金额',
+   	            type:'pie',
+   	            selectedMode: 'single',
+   	            radius: [0, '30%'],
+
+   	            label: {
+   	                normal: {
+   	                    position: 'inner'
+   	                }
+   	            },
+   	            labelLine: {
+   	                normal: {
+   	                    show: false
+   	                }
+   	            },
+   	            data:[
+   	            	{value:dataMap1.dataLevel0[globalID+'sum'], name:'非会员', selected:true},
+   	                {value:dataMap1.dataLevelTotal[globalID+'sum']-dataMap1.dataLevel0[globalID+'sum'], name:'会员'}
+   	            ]
+   	        },
+   	        {
+   	            name:'销售金额',
+   	            type:'pie',
+   	            radius: ['40%', '55%'],
+
+   	            data:[
+   	            	{value:dataMap1.dataLevel0[globalID+'sum'], name:'会员等级0'},
+   	                {value:dataMap1.dataLevel1[globalID+'sum'], name:'会员等级1'},
+   	                {value:dataMap1.dataLevel2[globalID+'sum'], name:'会员等级2'},
+   	                {value:dataMap1.dataLevel3[globalID+'sum'], name:'会员等级3'},
+   	                {value:dataMap1.dataLevel4[globalID+'sum'], name:'会员等级4'},
+   	                {value:dataMap1.dataLevel5[globalID+'sum'], name:'会员等级5'},
+   	            ]
+   	        }
+   	    ]
+   	};
+    
+    myChart2.setOption(option);
+	
+	
+    }
+    
+    
+    
+
+});
+</script>
+</body>
+</html>

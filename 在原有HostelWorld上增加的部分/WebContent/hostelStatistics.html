@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>预订、结算情况统计</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/echarts.min.js"></script>
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+</head>
+<body>
+<!--header-->
+	<div class="navigation">
+			<div class="container-fluid">
+				<nav class="pull">
+					<ul>
+						<li><a  href="/HostelWorld/home?id=0">主页</a></li>
+						<li><a  href="about.html">关于我们</a></li>
+						<li><a  href="/HostelWorld/home?id=5">个人页面</a></li>
+					</ul>
+				</nav>			
+			</div>
+		</div>
+
+<div class="header">
+	<div class="container">
+		<!--logo-->
+			<div class="logo">
+				<h1><a href="index.html">客栈之家</a></h1>
+			</div>
+		<!--//logo-->
+		<div class="top-nav">
+			<ul class="right-icons">
+				<li><a  href="http://localhost:8080/HostelWorld/logout"><i class="glyphicon glyphicon-user"> </i>注销</a></li>
+				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a></li>
+				
+			</ul>
+			<div class="nav-icon">
+				<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
+						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>
+					</div>	
+			</div>
+		<div class="clearfix"> </div>
+			<!---pop-up-box---->
+				    
+				<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!---//pop-up-box---->
+				<div id="small-dialog" class="mfp-hide">
+					    <!----- tabs-box ---->
+				<div class="sap_tabs">	
+				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+						  <ul class="resp-tabs-list">
+						  	  <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>All Homes</span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>For Sale</span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>For Rent</span></li>
+							  <div class="clearfix"></div>
+						  </ul>				  	 
+						  <div class="resp-tabs-container">
+						  		<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>All Homes</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+								 	<div class="facts">
+									  	<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div>        
+							        </div>
+						  		</div>
+							     <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>For Sale</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+									<div class="facts">									
+										<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div> 
+							        </div>	
+								 </div>									
+							      <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>For Rent</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+									 <div class="facts">
+										<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div> 
+							         </div>	
+							    </div>
+					      </div>
+					 </div>
+					 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+				    	<script type="text/javascript">
+						    $(document).ready(function () {
+						        $('#horizontalTab').easyResponsiveTabs({
+						            type: 'default', //Types: default, vertical, accordion           
+						            width: 'auto', //auto or any width like 600px
+						            fit: true   // 100% fit in a container
+						        });
+						    });
+			  			 </script>	
+				</div>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+					
+	
+		</div>
+		<div class="clearfix"> </div>
+		</div>	
+</div>
+<!--//-->	
+<div class=" banner-buying">
+	<div class=" container">
+	<h3><span>预订、结算情况统计</span></h3> 
+	<!---->
+	<div class="menu-right">
+		 <ul class="menu">
+			<li class="item1"><a href="#"> <span style="margin-right:10px;"></span>选项<i class="glyphicon glyphicon-menu-down"> </i> </a>
+			<ul class="cute">
+				<li class="subitem3"><a href="/HostelWorld/home?id=4">酒店信息</a></li>
+				<li class="subitem1"><a href="/HostelWorld/home?id=20">发布促销计划 </a></li>
+				<li class="subitem2"><a href="/HostelWorld/home?id=12">我的促销计划 </a></li>
+				<li class="subitem4"><a href="/HostelWorld/home?id=15">入住办理</a></li>
+				<li class="subitem5"><a href="/HostelWorld/home?id=16">离宿办理</a></li>
+				<li class="subitem6"><a href="/HostelWorld/home?id=18">预订、结算情况统计</a></li>
+				<li class="subitem7"><a href="/HostelWorld/home?id=23">营业金额统计</a></li>
+				<li class="subitem8"><a href="/HostelWorld/home?id=24">优惠计划统计</a></li>
+			</ul>
+		</li>
+		</ul>
+	</div>
+	<div class="clearfix"> </div>
+		<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+      		
+	</div>
+</div>
+<!--//header-->
+<div class="contact">
+	<div class="container">
+		<!-- 
+		<div class="price">
+			<div class="price-grid">
+					<div class="col-sm-8 price-top" style="margin-left: 15px;">
+						<h4>当前入住统计
+						<label style="margin-left:50px;">单间：<span id="single">0</span></label>
+						<label style="margin-left:30px;">标间：<span id="standard">0</span></label>
+						<label style="margin-left:30px;">套间：<span id="suite">0</span></label>
+						</h4>
+						
+					</div>
+					<div class="clearfix"> </div>
+					<div class="col-sm-8 price-top" style="margin-left: 15px;">
+						<h4>当前酒店余额<label style="margin-left:55px;"><span id="balance">0</span></label></h4>
+					</div>
+					<div class="clearfix"> </div>
+					
+			</div>
+		</div>
+		<h3>全部订单</h3>
+		<div class="top-grid" id="orderList"></div>
+		 -->
+		 <div style="margin:auto, 0px;">
+		 <h3>预订、入住情况统计</h3>
+		 <div style="margin-left:390px; margin-top:20px; font-family: 'Montserrat-Regular'; font-weight:bold; font-size:32px;">当前预订和入住情况查看</div>
+		 <div id="eCharts-1" style="width:600px; height:400px; margin-left:240px; margin-top:10px;"></div>
+		 
+		 <div style="margin-left:400px; margin-top:50px; font-family: 'Montserrat-Regular'; font-weight:bold; font-size:32px;">预订并入住详情查看</div>
+		 <div id="eCharts-2" style="width:600px; height:400px; margin-left:240px; margin-top:20px;"></div>
+		 <div id="eCharts-3" style="width:600px; height:400px; margin-left:240px; margin-top:20px;"></div>
+		 <div id="eCharts-4" style="width:600px; height:400px; margin-left:240px; margin-top:20px;"></div>
+		 
+		 <div style="margin-left:400px; margin-top:50px; font-family: 'Montserrat-Regular'; font-weight:bold; font-size:32px;">无预订入住详情查看</div>
+		 <div id="eCharts-5" style="width:600px; height:400px; margin-left:240px; margin-top:20px;"></div>
+		 
+		 <div style="margin-left:400px; margin-top:50px; font-family: 'Montserrat-Regular'; font-weight:bold; font-size:32px;">预订不入住详情查看</div>
+		 <div id="eCharts-6" style="width:600px; height:400px; margin-left:240px; margin-top:20px;"></div>
+		 <div id="eCharts-7" style="width:600px; height:400px; margin-left:240px; margin-top:20px;"></div>
+		 
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="container">
+		<div class="footer-top-at">
+			<div class="col-md-3 amet-sed">
+				<h4>Our Company</h4>
+				<ul class="nav-bottom">
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="blog.html">For Sale By Owner Blog</a></li>
+					<li><a href="mobile_app.html">Mobile</a></li>
+					<li><a href="terms.html">Terms & Conditions</a></li>
+					<li><a href="privacy.html">Privacy Policy</a></li>	
+					<li><a href="blog.html">Blog</a></li>
+					
+				</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Work With Us</h4>
+					<ul class="nav-bottom">
+						<li><a href="single.html">Real Estate Brokers</a></li>
+						<li><a href="single.html">Business Development</a></li>
+						<li><a href="single.html">Affiliate Programs</a></li>
+						<li><a href="contact.html">Sitemap</a></li>
+						<li><a href="career.html">Careers</a></li>
+						<li><a href="feedback.html">Feedback</a></li>	
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed">
+				<h4>Customer Support</h4>
+				<p>Mon-Fri, 7AM-7PM </p>
+				<p>Sat-Sun, 8AM-5PM </p>
+				<p>177-869-6559</p>
+					<ul class="nav-bottom">
+						<li><a href="#">Live Chat</a></li>
+						<li><a href="faqs.html">Frequently Asked Questions</a></li>
+						<li><a href="suggestion.html">Make a Suggestion</a></li>
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Property Services</h4>
+				   <ul class="nav-bottom">
+						<li><a href="single.html">Residential Property</a></li>
+						<li><a href="single.html">Commercial Property</a></li>
+						<li><a href="login.html">Login</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="typo.html">Short Codes</a></li>	
+					</ul>	
+					<ul class="social">
+						<li><a href="#"><i> </i></a></li>
+						<li><a href="#"><i class="gmail"> </i></a></li>
+						<li><a href="#"><i class="twitter"> </i></a></li>
+						<li><a href="#"><i class="camera"> </i></a></li>
+						<li><a href="#"><i class="dribble"> </i></a></li>
+					</ul>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--//footer-->
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+	// 当前预订和入住情况查看
+	var myChart1 = echarts.init(document.getElementById('eCharts-1'));
+
+    // 指定图表的配置项和数据
+    var option = {
+	    title : {
+	        text: ''
+	    },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+        	left:'right',
+        	width:'100px',
+            height:'10px',
+            data:['预订数','预订已入住','预订待入住','预订过期未入住','入住数','非会员未预订入住','会员未预订入住','会员预订入住']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['单人间','标准间','套间']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'预订数',
+                type:'bar',
+                data:[10, 12, 3]
+            },
+            {
+                name:'预订已入住',
+                type:'bar',
+                barWidth : 15,
+                stack: '预订数',
+                data:[7, 9, 2]
+            },
+            {
+                name:'预订待入住',
+                type:'bar',
+                stack: '预订数',
+                data:[2, 1, 1]
+            },
+            {
+                name:'预订过期未入住',
+                type:'bar',
+                stack: '预订数',
+                data:[1, 2, 0]
+            },
+            {
+                name:'入住数',
+                type:'bar',
+                data:[16, 20, 9],
+            },
+            {
+                name:'非会员未预订入住',
+                type:'bar',
+                barWidth : 15,
+                stack: '入住数',
+                data:[4, 3, 2]
+            },
+            {
+                name:'会员未预订入住',
+                type:'bar',
+                stack: '入住数',
+                data:[5, 8, 5]
+            },
+            {
+                name:'会员预订入住',
+                type:'bar',
+                stack: '入住数',
+                data:[7, 9, 2]
+            },
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option);
+    
+    
+    function dataFormatter(obj) {
+        var pList = ['单人间','标准间','套间'];
+        var temp;
+        var dayList = [7, 30, 90, 365];
+        for (var i=0; i<dayList.length; i++) {
+            var day = dayList[i];
+            temp = obj[day];
+            for (var j=0, l=temp.length; j<l; j++) {
+                obj[day][j] = {
+                    name : pList[j],
+                    value : temp[j]
+                }
+            }
+        }
+        return obj;
+    }
+    // 预订并入住详情查看
+    var myChart2 = echarts.init(document.getElementById('eCharts-2'));
+    
+    var dataMap1 = {};
+    
+    dataMap1.dataLevelTotal = dataFormatter({ // 不同会员等级预订的总数 
+        365:[625, 972, 323],
+        90:[157, 243, 85],
+        30:[50, 68, 29],
+        7:[12, 16, 8]
+    });
+
+    dataMap1.dataLevel1 = dataFormatter({ //会员等级1
+        365:[121, 205, 43],
+        90:[30, 53, 10],
+        30:[9, 13, 3],
+        7:[2, 3, 1]
+    });
+
+    dataMap1.dataLevel2 = dataFormatter({ //会员等级2
+        365:[130, 215, 49],
+        90:[34, 55, 16],
+        30:[12, 13, 5],
+        7:[3, 3, 1]
+    });
+
+    dataMap1.dataLevel3 = dataFormatter({ //会员等级3
+        365:[167, 212, 103],
+        90:[40, 53, 25],
+        30:[14, 18, 9],
+        7:[4, 5, 2]
+    });
+
+    dataMap1.dataLevel4 = dataFormatter({ //会员等级4
+        365:[129, 195, 49],
+        90:[33, 43, 14],
+        30:[9, 13, 5],
+        7:[2, 3, 2]
+    });
+
+    dataMap1.dataLevel5 = dataFormatter({ //会员等级5
+        365:[78, 145, 79],
+        90:[20, 39, 20],
+        30:[6, 11, 7],
+        7:[1,2,2]
+    });
+
+    dataMap1.dataPromotionTotal = dataFormatter({ // 不同优惠计划预订的总数 
+        365:[625, 972, 323],
+        90:[157, 243, 85],
+        30:[50, 68, 29],
+        7:[12, 16, 8]
+    });
+
+    dataMap1.dataPromotion = dataFormatter({ //有优惠
+        365:[354, 593, 261],
+        90:[99, 157, 66],
+        30:[29, 44, 24],
+        7:[4, 9, 6]
+    });
+
+    dataMap1.dataNoPromotion = dataFormatter({ //无优惠
+        365:[271, 379, 62],
+        90:[58, 86, 19],
+        30:[21, 24, 5],
+        7:[8, 7, 2]
+    });
+
+    dataMap1.dataExpectPeriod = dataFormatter({ //预计消费日期平均值
+        365:[2.67, 4.33, 2.33],
+        90:[3.00, 3.67, 2.33],
+        30:[3.33, 4.67, 1.67],
+        7:[3.33, 5.67, 2.00]
+    });
+    
+    dataMap1.dataExpectPeriod1 = dataFormatter({ //预计消费日期1天百分比
+        365:[0.35, 0.29, 0.48],
+        90:[0.16, 0.19, 0.36],
+        30:[0.21, 0.20, 0.45],
+        7:[0.32, 0.05, 0.54]
+    });
+    
+    dataMap1.dataExpectPeriod2 = dataFormatter({ //预计消费日期2-3天百分比
+        365:[0.46, 0.37, 0.49],
+        90:[0.59, 0.43, 0.38],
+        30:[0.53, 0.35, 0.52],
+        7:[0.46, 0.28, 0.37]
+    });
+
+    dataMap1.dataExpectPeriod3 = dataFormatter({ //预计消费日期4-7天百分比
+        365:[0.18, 0.31, 0.02],
+        90:[0.20, 0.35, 0.24],
+        30:[0.24, 0.42, 0.02],
+        7:[0.20, 0.65, 0.06]
+    });
+
+    dataMap1.dataExpectPeriod4 = dataFormatter({ //预计消费日期7天以上百分比
+        365:[0.01, 0.03, 0.01],
+        90:[0.05, 0.03, 0.02],
+        30:[0.02, 0.03, 0.01],
+        7:[0.02, 0.02, 0.03]
+    });
+
+    dataMap1.dataRealPeriod = dataFormatter({ //实际消费日期平均值
+        365:[3.00, 5.00, 1.33],
+        90:[3.33, 3.33, 3.00],
+        30:[3.67, 5.00, 2.00],
+        7:[3.67, 6.67, 3.67]
+    });
+
+    dataMap1.dataRealPeriod1 = dataFormatter({ //实际消费日期1天百分比
+        365:[0.33, 0.19, 0.47],
+        90:[0.14, 0.21, 0.32],
+        30:[0.10, 0.18, 0.47],
+        7:[0.25, 0.11, 0.39]
+    });
+    
+    dataMap1.dataRealPeriod2 = dataFormatter({ //实际消费日期2-3天百分比
+        365:[0.49, 0.34, 0.47],
+        90:[0.63, 0.43, 0.39],
+        30:[0.57, 0.33, 0.49],
+        7:[0.46, 0.30, 0.37]
+    });
+
+    dataMap1.dataRealPeriod3 = dataFormatter({ //实际消费日期4-7天百分比
+        365:[0.15, 0.42, 0.04],
+        90:[0.19, 0.33, 0.26],
+        30:[0.32, 0.44, 0.02],
+        7:[0.26, 0.55, 0.17]
+    });
+
+    dataMap1.dataRealPeriod4 = dataFormatter({ //实际消费日期7天以上百分比
+        365:[0.03, 0.05, 0.02],
+        90:[0.04, 0.03, 0.03],
+        30:[0.01, 0.05, 0.02],
+        7:[0.03, 0.04, 0.07]
+    });
+
+    dataMap1.dataBookAdvance = dataFormatter({ //预订提前时间平均值
+        365:[5.33, 7.67, 9.67],
+        90:[5.00, 6.67, 10.33],
+        30:[5.33, 7.00, 10.33],
+        7:[5.33, 7.00, 10.00]
+    });
+
+    dataMap1.dataBookAdvance1 = dataFormatter({ //预订提前时间1-3天百分比
+        365:[0.04, 0.13, 0.02],
+        90:[0.05, 0.15, 0.04],
+        30:[0.06, 0.13, 0.03],
+        7:[0.05, 0.14, 0.03]
+    });
+    
+    dataMap1.dataBookAdvance2 = dataFormatter({ //预订提前时间4-7天百分比
+        365:[0.59, 0.34, 0.43],
+        90:[0.61, 0.36, 0.41],
+        30:[0.58, 0.33, 0.42],
+        7:[0.60, 0.35, 0.42]
+    });
+
+    dataMap1.dataBookAdvance3 = dataFormatter({ //预订提前时间7-14天百分比
+        365:[0.27, 0.46, 0.47],
+        90:[0.30, 0.43, 0.46],
+        30:[0.30, 0.45, 0.45],
+        7:[0.31, 0.45, 0.46]
+    });
+
+    dataMap1.dataBookAdvance4 = dataFormatter({ //预订提前时间15天以上百分比
+        365:[0.06, 0.07, 0.08],
+        90:[0.04, 0.08, 0.05],
+        30:[0.06, 0.09, 0.10],
+        7:[0.04, 0.06, 0.09]
+    });
+
+    option = {
+        baseOption: {
+            timeline: {
+                // y: 0,
+                axisType: 'category',
+                // realtime: false,
+                // loop: false,
+                autoPlay: true,
+                // currentIndex: 2,
+                playInterval: 3000,
+                // controlStyle: {
+                //     position: 'left'
+                // },
+                data: [
+                    '7','30','90','365'
+                ],
+                label: {
+                    formatter : function(s) {
+                        return '近'+s+"天";
+                    }
+                }
+            },
+            title: {
+                subtext: ''
+            },
+            tooltip: {
+            },
+            legend: {
+            	width:'300px',
+                height:'10px',
+                x: 'right',
+                data: ['会员等级', '优惠计划'],
+                selected: {
+                    
+                }
+            },
+            calculable : true,
+            grid: {
+                top: 80,
+                bottom: 100,
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow',
+                        label: {
+                            show: true,
+                            formatter: function (params) {
+                                return params.value.replace('\n', '');
+                            }
+                        }
+                    }
+                }
+            },
+            xAxis: [
+                {
+                    'type':'category',
+                    'axisLabel':{'interval':0},
+                    'data':[
+                        '单人间','标准间','套间'
+                    ],
+                    splitLine: {show: false}
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '数量'
+                }
+            ],
+            series: [
+                {name: '会员等级', type: 'bar'},
+                {name: '会员等级1', type:'bar', barWidth : 15, stack: '会员等级'},
+                {name: '会员等级2', type:'bar', barWidth : 15, stack: '会员等级'},
+                {name: '会员等级3', type:'bar', barWidth : 15, stack: '会员等级'},
+                {name: '会员等级4', type:'bar', barWidth : 15, stack: '会员等级'},
+                {name: '会员等级5', type:'bar', barWidth : 15, stack: '会员等级'},
+                {name: '优惠计划', type: 'bar'},
+                {name: '有优惠计划', type:'bar', barWidth : 15, stack: '优惠计划'},
+                {name: '无优惠计划', type:'bar', barWidth : 15, stack: '优惠计划'}
+            ]
+        },
+        options: [
+            {
+                title: {text: '近7日内预订并入住情况总数统计'},
+                series: [
+                    {data: dataMap1.dataLevelTotal['7']},
+                    {data: dataMap1.dataLevel1['7']},
+                    {data: dataMap1.dataLevel2['7']},
+                    {data: dataMap1.dataLevel3['7']},
+                    {data: dataMap1.dataLevel4['7']},
+                    {data: dataMap1.dataLevel5['7']},
+                    {data: dataMap1.dataPromotionTotal['7']},
+                    {data: dataMap1.dataPromotion['7']},
+                    {data: dataMap1.dataNoPromotion['7']}
+                ]
+            },
+            {
+                title : {text: '近30日内预订并入住情况总数统计'},
+                series: [
+                    {data: dataMap1.dataLevelTotal['30']},
+                    {data: dataMap1.dataLevel1['30']},
+                    {data: dataMap1.dataLevel2['30']},
+                    {data: dataMap1.dataLevel3['30']},
+                    {data: dataMap1.dataLevel4['30']},
+                    {data: dataMap1.dataLevel5['30']},
+                    {data: dataMap1.dataPromotionTotal['30']},
+                    {data: dataMap1.dataPromotion['30']},
+                    {data: dataMap1.dataNoPromotion['30']}
+                ]
+            },
+            {
+                title : {text: '近90日内预订并入住情况总数统计'},
+                series: [
+                    {data: dataMap1.dataLevelTotal['90']},
+                    {data: dataMap1.dataLevel1['90']},
+                    {data: dataMap1.dataLevel2['90']},
+                    {data: dataMap1.dataLevel3['90']},
+                    {data: dataMap1.dataLevel4['90']},
+                    {data: dataMap1.dataLevel5['90']},
+                    {data: dataMap1.dataPromotionTotal['90']},
+                    {data: dataMap1.dataPromotion['90']},
+                    {data: dataMap1.dataNoPromotion['90']}
+                ]
+            },
+            {
+                title : {text: '近365日内预订并入住情况总数统计'},
+                series: [
+                    {data: dataMap1.dataLevelTotal['365']},
+                    {data: dataMap1.dataLevel1['365']},
+                    {data: dataMap1.dataLevel2['365']},
+                    {data: dataMap1.dataLevel3['365']},
+                    {data: dataMap1.dataLevel4['365']},
+                    {data: dataMap1.dataLevel5['365']},
+                    {data: dataMap1.dataPromotionTotal['365']},
+                    {data: dataMap1.dataPromotion['365']},
+                    {data: dataMap1.dataNoPromotion['365']}
+                ]
+            }
+        ]
+    };
+    
+    myChart2.setOption(option);
+ 
+    
+    var myChart3 = echarts.init(document.getElementById('eCharts-3'));
+ 
+    option = {
+        baseOption: {
+            timeline: {
+                // y: 0,
+                axisType: 'category',
+                // realtime: false,
+                // loop: false,
+                autoPlay: true,
+                // currentIndex: 2,
+                playInterval: 3000,
+                // controlStyle: {
+                //     position: 'left'
+                // },
+                data: [
+                    '7','30','90','365'
+                ],
+                label: {
+                    formatter : function(s) {
+                        return '近'+s+"天";
+                    }
+                }
+            },
+            title: {
+                subtext: ''
+            },
+            tooltip: {
+            },
+            legend: {
+            	width:'300px',
+                height:'10px',
+                x: 'right',
+                data: ['预计消费日期跨度', '实际消费日期跨度', '预订提前值'],
+                selected: {
+                    
+                }
+            },
+            calculable : true,
+            grid: {
+                top: 80,
+                bottom: 100,
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow',
+                        label: {
+                            show: true,
+                            formatter: function (params) {
+                                return params.value.replace('\n', '');
+                            }
+                        }
+                    }
+                }
+            },
+            xAxis: [
+                {
+                    'type':'category',
+                    'axisLabel':{'interval':0},
+                    'data':[
+                        '单人间','标准间','套间'
+                    ],
+                    splitLine: {show: false}
+                }
+            ],
+            yAxis: [
+                {
+                   
+                }
+            ],
+            series: [
+                {name: '预计消费日期跨度', type: 'bar'},
+                {name: '实际消费日期跨度', type: 'bar'},
+                {name: '预订提前值', type: 'bar'},
+            ]
+        },
+        options: [
+            {
+                title: {text: '近7日内预订并入住情况时间统计'},
+                series: [
+                    {data: dataMap1.dataExpectPeriod['7']},
+                    {data: dataMap1.dataRealPeriod['7']},
+                    {data: dataMap1.dataBookAdvance['7']},
+                ]
+            },
+            {
+                title : {text: '近30日内预订并入住情况时间统计'},
+                series: [
+                	{data: dataMap1.dataExpectPeriod['30']},
+                    {data: dataMap1.dataRealPeriod['30']},
+                    {data: dataMap1.dataBookAdvance['30']},
+                ]
+            },
+            {
+                title : {text: '近90日内预订并入住情况时间统计'},
+                series: [
+                	{data: dataMap1.dataExpectPeriod['90']},
+                    {data: dataMap1.dataRealPeriod['90']},
+                    {data: dataMap1.dataBookAdvance['90']},
+                ]
+            },
+            {
+                title : {text: '近365日内预订并入住情况时间统计'},
+                series: [
+                	{data: dataMap1.dataExpectPeriod['365']},
+                    {data: dataMap1.dataRealPeriod['365']},
+                    {data: dataMap1.dataBookAdvance['365']},
+                ]
+            }
+        ]
+    };
+    
+    myChart3.setOption(option);
+
+    
+    
+    var myChart4 = echarts.init(document.getElementById('eCharts-4'));
+    
+    option = {
+            baseOption: {
+                timeline: {
+                    // y: 0,
+                    axisType: 'category',
+                    // realtime: false,
+                    // loop: false,
+                    autoPlay: true,
+                    // currentIndex: 2,
+                    playInterval: 3000,
+                    // controlStyle: {
+                    //     position: 'left'
+                    // },
+                    data: [
+                        '7','30','90','365'
+                    ],
+                    label: {
+                        formatter : function(s) {
+                            return '近'+s+"天";
+                        }
+                    }
+                },
+                title: {
+                    subtext: ''
+                },
+                tooltip: {
+                },
+                legend: {
+                    x: 'right',
+                    data: ['预计消费日期跨度', '实际消费日期跨度', '预订提前值'],
+                    selected: {
+                        
+                    }
+                },
+                calculable : true,
+                grid: {
+                    top: 80,
+                    bottom: 100,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                                formatter: function (params) {
+                                    return params.value.replace('\n', '');
+                                }
+                            }
+                        }
+                    }
+                },
+                xAxis: [
+                    {
+                        'type':'category',
+                        'axisLabel':{'interval':0},
+                        'data':[
+                            '单人间','标准间','套间'
+                        ],
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                    	data: ['提前值', '实消费', '预消费']
+                    }
+                ],
+                series: [
+                    {name: '单人间预计消费日期跨度', type: 'pie', center: ['20%', '20%'], radius: '11%', z: 100},
+                    {name: '单人间实际消费日期跨度', type: 'pie', center: ['20%', '43%'], radius: '11%', z: 100},
+                    {name: '单人间预订提前值', type: 'pie', center: ['20%', '66%'], radius: '11%', z: 100},
+                    {name: '标准间预计消费日期跨度', type: 'pie', center: ['48%', '20%'], radius: '11%', z: 100},
+                    {name: '标准间实际消费日期跨度', type: 'pie', center: ['48%', '43%'], radius: '11%', z: 100},
+                    {name: '标准间预订提前值', type: 'pie', center: ['48%', '66%'], radius: '11%', z: 100},
+                    {name: '套间预计消费日期跨度', type: 'pie', center: ['75%', '20%'], radius: '11%', z: 100},
+                    {name: '套间实际消费日期跨度', type: 'pie', center: ['75%', '43%'], radius: '11%', z: 100},
+                    {name: '套间预订提前值', type: 'pie', center: ['75%', '66%'], radius: '11%', z: 100}
+                
+                ]
+            },
+            options: [
+                {
+                    title: {text: '近7日内预订并入住情况统计'},
+                    series: [
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.32},
+                                {name: '2-3天', value: 0.46},
+                                {name: '4-7天', value: 0.20},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.25},
+                                {name: '2-3天', value: 0.46},
+                                {name: '4-7天', value: 0.26},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.05},
+                                {name: '4-7天', value: 0.60},
+                                {name: '8-14天', value: 0.31},
+                                {name: '15天以上', value: 0.04}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.05},
+                                {name: '2-3天', value: 0.28},
+                                {name: '4-7天', value: 0.65},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.11},
+                                {name: '2-3天', value: 0.30},
+                                {name: '4-7天', value: 0.55},
+                                {name: '7天以上', value: 0.04}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.14},
+                                {name: '4-7天', value: 0.35},
+                                {name: '8-14天', value: 0.45},
+                                {name: '15天以上', value: 0.46}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.54},
+                                {name: '2-3天', value: 0.37},
+                                {name: '4-7天', value: 0.06},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.39},
+                                {name: '2-3天', value: 0.37},
+                                {name: '4-7天', value: 0.17},
+                                {name: '7天以上', value: 0.07}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.03},
+                                {name: '4-7天', value: 0.42},
+                                {name: '8-14天', value: 0.46},
+                                {name: '15天以上', value: 0.09}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近30日内预订并入住情况统计'},
+                    series: [
+                    	{data: 
+                            [ 
+                                {name: '1天', value: 0.21},
+                                {name: '2-3天', value: 0.53},
+                                {name: '4-7天', value: 0.24},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.10},
+                                {name: '2-3天', value: 0.57},
+                                {name: '4-7天', value: 0.32},
+                                {name: '7天以上', value: 0.01}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.06},
+                                {name: '4-7天', value: 0.58},
+                                {name: '8-14天', value: 0.30},
+                                {name: '15天以上', value: 0.06}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.20},
+                                {name: '2-3天', value: 0.35},
+                                {name: '4-7天', value: 0.42},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.18},
+                                {name: '2-3天', value: 0.33},
+                                {name: '4-7天', value: 0.44},
+                                {name: '7天以上', value: 0.05}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.13},
+                                {name: '4-7天', value: 0.33},
+                                {name: '8-14天', value: 0.45},
+                                {name: '15天以上', value: 0.09}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.45},
+                                {name: '2-3天', value: 0.52},
+                                {name: '4-7天', value: 0.02},
+                                {name: '7天以上', value: 0.01}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.47},
+                                {name: '2-3天', value: 0.49},
+                                {name: '4-7天', value: 0.02},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.03},
+                                {name: '4-7天', value: 0.42},
+                                {name: '8-14天', value: 0.45},
+                                {name: '15天以上', value: 0.10}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近90日内预订并入住情况统计'},
+                    series: [
+                    	{data: 
+                            [ 
+                                {name: '1天', value: 0.16},
+                                {name: '2-3天', value: 0.59},
+                                {name: '4-7天', value: 0.20},
+                                {name: '7天以上', value: 0.05}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.14},
+                                {name: '2-3天', value: 0.63},
+                                {name: '4-7天', value: 0.19},
+                                {name: '7天以上', value: 0.04}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.05},
+                                {name: '4-7天', value: 0.61},
+                                {name: '8-14天', value: 0.30},
+                                {name: '15天以上', value: 0.04}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.19},
+                                {name: '2-3天', value: 0.43},
+                                {name: '4-7天', value: 0.35},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.21},
+                                {name: '2-3天', value: 0.43},
+                                {name: '4-7天', value: 0.33},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.15},
+                                {name: '4-7天', value: 0.36},
+                                {name: '8-14天', value: 0.43},
+                                {name: '15天以上', value: 0.08}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.36},
+                                {name: '2-3天', value: 0.38},
+                                {name: '4-7天', value: 0.24},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.32},
+                                {name: '2-3天', value: 0.39},
+                                {name: '4-7天', value: 0.26},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.04},
+                                {name: '4-7天', value: 0.46},
+                                {name: '8-14天', value: 0.41},
+                                {name: '15天以上', value: 0.05}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近365日内预订并入住情况统计'},
+                    series: [
+                    	{data: 
+                            [ 
+                                {name: '1天', value: 0.35},
+                                {name: '2-3天', value: 0.46},
+                                {name: '4-7天', value: 0.18},
+                                {name: '7天以上', value: 0.01}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.33},
+                                {name: '2-3天', value: 0.49},
+                                {name: '4-7天', value: 0.15},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.04},
+                                {name: '4-7天', value: 0.59},
+                                {name: '8-14天', value: 0.27},
+                                {name: '15天以上', value: 0.06}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.29},
+                                {name: '2-3天', value: 0.37},
+                                {name: '4-7天', value: 0.31},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.19},
+                                {name: '2-3天', value: 0.34},
+                                {name: '4-7天', value: 0.42},
+                                {name: '7天以上', value: 0.05}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.13},
+                                {name: '4-7天', value: 0.34},
+                                {name: '8-14天', value: 0.46},
+                                {name: '15天以上', value: 0.07}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.48},
+                                {name: '2-3天', value: 0.49},
+                                {name: '4-7天', value: 0.02},
+                                {name: '7天以上', value: 0.01}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.47},
+                                {name: '2-3天', value: 0.47},
+                                {name: '4-7天', value: 0.04},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.02},
+                                {name: '4-7天', value: 0.43},
+                                {name: '8-14天', value: 0.47},
+                                {name: '15天以上', value: 0.08}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+    
+    myChart4.setOption(option);
+    
+    
+ 	// 非预订入住详情查看
+    var myChart5 = echarts.init(document.getElementById('eCharts-5'));
+    
+ 	var dataMap2 = {};
+    
+ 	dataMap2.dataLevelTotal = dataFormatter({ // 不同会员等级不预订入住的总数 
+        365:[845, 1257, 471],
+        90:[221, 316, 137],
+        30:[71, 96, 45],
+        7:[19, 26, 13]
+    });
+
+ 	dataMap2.dataLevel0 = dataFormatter({ //会员等级0(非会员)
+        365:[220, 285, 148],
+        90:[64, 73, 42],
+        30:[21, 28, 16],
+        7:[7, 10, 5]
+    });
+ 	
+    dataMap2.dataLevel1 = dataFormatter({ //会员等级1
+        365:[121, 205, 43],
+        90:[30, 53, 10],
+        30:[9, 13, 3],
+        7:[2, 3, 1]
+    });
+
+    dataMap2.dataLevel2 = dataFormatter({ //会员等级2
+        365:[130, 215, 49],
+        90:[34, 55, 16],
+        30:[12, 13, 5],
+        7:[3, 3, 1]
+    });
+
+    dataMap2.dataLevel3 = dataFormatter({ //会员等级3
+        365:[167, 212, 103],
+        90:[40, 53, 25],
+        30:[14, 18, 9],
+        7:[4, 5, 2]
+    });
+
+    dataMap2.dataLevel4 = dataFormatter({ //会员等级4
+        365:[129, 195, 49],
+        90:[33, 43, 14],
+        30:[9, 13, 5],
+        7:[2, 3, 2]
+    });
+
+    dataMap2.dataLevel5 = dataFormatter({ //会员等级5
+        365:[78, 145, 79],
+        90:[20, 39, 20],
+        30:[6, 11, 7],
+        7:[1,2,2]
+    });
+
+    dataMap2.dataPromotionTotal = dataFormatter({ // 不同优惠计划非预订入住的总数 
+    	365:[845, 1257, 471],
+        90:[221, 316, 137],
+        30:[71, 96, 45],
+        7:[19, 26, 13]
+    });
+
+    dataMap2.dataPromotion = dataFormatter({ //有优惠
+        365:[446, 682, 371],
+        90:[129, 177, 94],
+        30:[48, 64, 33],
+        7:[11, 15, 8]
+    });
+
+    dataMap2.dataNoPromotion = dataFormatter({ //无优惠
+        365:[399, 575, 100],
+        90:[92, 139, 43],
+        30:[23, 32, 12],
+        7:[8, 11, 5]
+    });
+
+    option = {
+            baseOption: {
+                timeline: {
+                    // y: 0,
+                    axisType: 'category',
+                    // realtime: false,
+                    // loop: false,
+                    autoPlay: true,
+                    // currentIndex: 2,
+                    playInterval: 3000,
+                    // controlStyle: {
+                    //     position: 'left'
+                    // },
+                    data: [
+                        '7','30','90','365'
+                    ],
+                    label: {
+                        formatter : function(s) {
+                            return '近'+s+"天";
+                        }
+                    }
+                },
+                title: {
+                    subtext: ''
+                },
+                tooltip: {
+                },
+                legend: {
+                	width:'300px',
+                    height:'10px',
+                    x: 'right',
+                    data: ['会员等级', '优惠计划', '实际消费日期跨度'],
+                    selected: {
+                        
+                    }
+                },
+                calculable : true,
+                grid: {
+                    top: 80,
+                    bottom: 100,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                                formatter: function (params) {
+                                    return params.value.replace('\n', '');
+                                }
+                            }
+                        }
+                    }
+                },
+                xAxis: [
+                    {
+                        'type':'category',
+                        'axisLabel':{'interval':0},
+                        'data':[
+                            '单人间','标准间','套间'
+                        ],
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '数量'
+                    }
+                ],
+                series: [
+                    {name: '会员等级', type: 'bar'},
+                    {name: '会员等级0（非会员）', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级1', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级2', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级3', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级4', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级5', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '优惠计划', type: 'bar'},
+                    {name: '有优惠计划', type:'bar', barWidth : 15, stack: '优惠计划'},
+                    {name: '无优惠计划', type:'bar', barWidth : 15, stack: '优惠计划'},
+                    {name: '实际消费日期跨度', type: 'pie', center: ['75%', '30%'], radius: '17%', z: 100}
+                ]
+            },
+            options: [
+                {
+                    title: {text: '近7日内非预订入住情况总数统计'},
+                    series: [
+                        {data: dataMap2.dataLevelTotal['7']},
+                        {data: dataMap2.dataLevel0['7']},
+                        {data: dataMap2.dataLevel1['7']},
+                        {data: dataMap2.dataLevel2['7']},
+                        {data: dataMap2.dataLevel3['7']},
+                        {data: dataMap2.dataLevel4['7']},
+                        {data: dataMap2.dataLevel5['7']},
+                        {data: dataMap2.dataPromotionTotal['7']},
+                        {data: dataMap2.dataPromotion['7']},
+                        {data: dataMap2.dataNoPromotion['7']},
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.45},
+                                {name: '2-3天', value: 0.42},
+                                {name: '4-7天', value: 0.10},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近30日内非预订入住情况总数统计'},
+                    series: [
+                        {data: dataMap2.dataLevelTotal['30']},
+                        {data: dataMap2.dataLevel0['30']},
+                        {data: dataMap2.dataLevel1['30']},
+                        {data: dataMap2.dataLevel2['30']},
+                        {data: dataMap2.dataLevel3['30']},
+                        {data: dataMap2.dataLevel4['30']},
+                        {data: dataMap2.dataLevel5['30']},
+                        {data: dataMap2.dataPromotionTotal['30']},
+                        {data: dataMap2.dataPromotion['30']},
+                        {data: dataMap2.dataNoPromotion['30']},
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.43},
+                                {name: '2-3天', value: 0.38},
+                                {name: '4-7天', value: 0.14},
+                                {name: '7天以上', value: 0.05}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近90日内非预订入住情况总数统计'},
+                    series: [
+                        {data: dataMap2.dataLevelTotal['90']},
+                        {data: dataMap2.dataLevel0['90']},
+                        {data: dataMap2.dataLevel1['90']},
+                        {data: dataMap2.dataLevel2['90']},
+                        {data: dataMap2.dataLevel3['90']},
+                        {data: dataMap2.dataLevel4['90']},
+                        {data: dataMap2.dataLevel5['90']},
+                        {data: dataMap2.dataPromotionTotal['90']},
+                        {data: dataMap2.dataPromotion['90']},
+                        {data: dataMap2.dataNoPromotion['90']},
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.46},
+                                {name: '2-3天', value: 0.41},
+                                {name: '4-7天', value: 0.09},
+                                {name: '7天以上', value: 0.04}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近365日内非预订入住情况总数统计'},
+                    series: [
+                        {data: dataMap2.dataLevelTotal['365']},
+                        {data: dataMap2.dataLevel0['365']},
+                        {data: dataMap2.dataLevel1['365']},
+                        {data: dataMap2.dataLevel2['365']},
+                        {data: dataMap2.dataLevel3['365']},
+                        {data: dataMap2.dataLevel4['365']},
+                        {data: dataMap2.dataLevel5['365']},
+                        {data: dataMap2.dataPromotionTotal['365']},
+                        {data: dataMap2.dataPromotion['365']},
+                        {data: dataMap2.dataNoPromotion['365']},
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.42},
+                                {name: '2-3天', value: 0.40},
+                                {name: '4-7天', value: 0.10},
+                                {name: '7天以上', value: 0.08}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+        
+        myChart5.setOption(option);
+        
+        
+        
+     // 预订不入住详情查看
+        var myChart6 = echarts.init(document.getElementById('eCharts-6'));
+        
+     	var dataMap3 = {};
+        
+     	dataMap3.dataLevelTotal = dataFormatter({ // 不同会员等级预订不入住的总数 
+            365:[9, 15, 3],
+            90:[2, 4, 1],
+            30:[1, 3, 0],
+            7:[0, 1, 0]
+        });
+
+        dataMap3.dataLevel1 = dataFormatter({ //会员等级1
+            365:[2, 1, 1],
+            90:[0, 0, 1],
+            30:[0, 0, 0],
+            7:[0, 0, 0]
+        });
+
+        dataMap3.dataLevel2 = dataFormatter({ //会员等级2
+            365:[2, 4, 0],
+            90:[0, 1, 0],
+            30:[0, 1, 0],
+            7:[0, 0, 0]
+        });
+
+        dataMap3.dataLevel3 = dataFormatter({ //会员等级3
+            365:[2, 4, 1],
+            90:[1, 1, 0],
+            30:[0, 1, 0],
+            7:[0, 1, 0]
+        });
+
+        dataMap3.dataLevel4 = dataFormatter({ //会员等级4
+            365:[2, 3, 0],
+            90:[1, 1, 0],
+            30:[1, 0, 0],
+            7:[0, 0, 0]
+        });
+
+        dataMap3.dataLevel5 = dataFormatter({ //会员等级5
+            365:[1, 3, 1],
+            90:[0, 1, 1],
+            30:[0, 1, 0],
+            7:[0, 0, 0]
+        });
+
+        dataMap3.dataPromotionTotal = dataFormatter({ // 不同优惠计划预订不入住的总数 
+        	365:[9, 15, 3],
+            90:[2, 4, 1],
+            30:[1, 3, 0],
+            7:[0, 1, 0]
+        });
+
+        dataMap3.dataPromotion = dataFormatter({ //有优惠
+            365:[3, 6, 0],
+            90:[1, 1, 0],
+            30:[0, 1, 0],
+            7:[0, 0, 0]
+        });
+
+        dataMap3.dataNoPromotion = dataFormatter({ //无优惠
+            365:[6, 9, 3],
+            90:[1, 3, 1],
+            30:[1, 2, 0],
+            7:[0, 1, 0]
+        });
+
+        option = {
+            baseOption: {
+                timeline: {
+                    // y: 0,
+                    axisType: 'category',
+                    // realtime: false,
+                    // loop: false,
+                    autoPlay: true,
+                    // currentIndex: 2,
+                    playInterval: 3000,
+                    // controlStyle: {
+                    //     position: 'left'
+                    // },
+                    data: [
+                        '7','30','90','365'
+                    ],
+                    label: {
+                        formatter : function(s) {
+                            return '近'+s+"天";
+                        }
+                    }
+                },
+                title: {
+                    subtext: ''
+                },
+                tooltip: {
+                },
+                legend: {
+                	width:'300px',
+                    height:'10px',
+                    x: 'right',
+                    data: ['会员等级', '优惠计划'],
+                    selected: {
+                        
+                    }
+                },
+                calculable : true,
+                grid: {
+                    top: 80,
+                    bottom: 100,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                                formatter: function (params) {
+                                    return params.value.replace('\n', '');
+                                }
+                            }
+                        }
+                    }
+                },
+                xAxis: [
+                    {
+                        'type':'category',
+                        'axisLabel':{'interval':0},
+                        'data':[
+                            '单人间','标准间','套间'
+                        ],
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '数量'
+                    }
+                ],
+                series: [
+                    {name: '会员等级', type: 'bar'},
+                    {name: '会员等级1', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级2', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级3', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级4', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '会员等级5', type:'bar', barWidth : 15, stack: '会员等级'},
+                    {name: '优惠计划', type: 'bar'},
+                    {name: '有优惠计划', type:'bar', barWidth : 15, stack: '优惠计划'},
+                    {name: '无优惠计划', type:'bar', barWidth : 15, stack: '优惠计划'},
+                ]
+            },
+            options: [
+                {
+                    title: {text: '近7日内预订不入住情况总数统计'},
+                    series: [
+                        {data: dataMap3.dataLevelTotal['7']},
+                        {data: dataMap3.dataLevel1['7']},
+                        {data: dataMap3.dataLevel2['7']},
+                        {data: dataMap3.dataLevel3['7']},
+                        {data: dataMap3.dataLevel4['7']},
+                        {data: dataMap3.dataLevel5['7']},
+                        {data: dataMap3.dataPromotionTotal['7']},
+                        {data: dataMap3.dataPromotion['7']},
+                        {data: dataMap3.dataNoPromotion['7']},
+                    ]
+                },
+                {
+                    title : {text: '近30日内预订不入住情况总数统计'},
+                    series: [
+                        {data: dataMap3.dataLevelTotal['30']},
+                        {data: dataMap3.dataLevel1['30']},
+                        {data: dataMap3.dataLevel2['30']},
+                        {data: dataMap3.dataLevel3['30']},
+                        {data: dataMap3.dataLevel4['30']},
+                        {data: dataMap3.dataLevel5['30']},
+                        {data: dataMap3.dataPromotionTotal['30']},
+                        {data: dataMap3.dataPromotion['30']},
+                        {data: dataMap3.dataNoPromotion['30']},
+                    ]
+                },
+                {
+                    title : {text: '近90日内预订不入住情况总数统计'},
+                    series: [
+                        {data: dataMap3.dataLevelTotal['90']},
+                        {data: dataMap3.dataLevel1['90']},
+                        {data: dataMap3.dataLevel2['90']},
+                        {data: dataMap3.dataLevel3['90']},
+                        {data: dataMap3.dataLevel4['90']},
+                        {data: dataMap3.dataLevel5['90']},
+                        {data: dataMap3.dataPromotionTotal['90']},
+                        {data: dataMap3.dataPromotion['90']},
+                        {data: dataMap3.dataNoPromotion['90']},
+                    ]
+                },
+                {
+                    title : {text: '近365日内预订不入住情况总数统计'},
+                    series: [
+                        {data: dataMap3.dataLevelTotal['365']},
+                        {data: dataMap3.dataLevel1['365']},
+                        {data: dataMap3.dataLevel2['365']},
+                        {data: dataMap3.dataLevel3['365']},
+                        {data: dataMap3.dataLevel4['365']},
+                        {data: dataMap3.dataLevel5['365']},
+                        {data: dataMap3.dataPromotionTotal['365']},
+                        {data: dataMap3.dataPromotion['365']},
+                        {data: dataMap3.dataNoPromotion['365']},
+                    ]
+                }
+            ]
+        };
+        
+    myChart6.setOption(option);
+      
+
+    var myChart7 = echarts.init(document.getElementById('eCharts-7'));
+    
+    option = {
+            baseOption: {
+                timeline: {
+                    // y: 0,
+                    axisType: 'category',
+                    // realtime: false,
+                    // loop: false,
+                    autoPlay: true,
+                    // currentIndex: 2,
+                    playInterval: 3000,
+                    // controlStyle: {
+                    //     position: 'left'
+                    // },
+                    data: [
+                        '7','30','90','365'
+                    ],
+                    label: {
+                        formatter : function(s) {
+                            return '近'+s+"天";
+                        }
+                    }
+                },
+                title: {
+                    subtext: ''
+                },
+                tooltip: {
+                },
+                legend: {
+                    x: 'right',
+                    data: ['预计消费日期跨度','预订提前值'],
+                    selected: {
+                        
+                    }
+                },
+                calculable : true,
+                grid: {
+                    top: 80,
+                    bottom: 100,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                                formatter: function (params) {
+                                    return params.value.replace('\n', '');
+                                }
+                            }
+                        }
+                    }
+                },
+                xAxis: [
+                    {
+                        'type':'category',
+                        'axisLabel':{'interval':0},
+                        'data':[
+                            '单人间','标准间','套间'
+                        ],
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                    	data: ['提前值', '预消费']
+                    }
+                ],
+                series: [
+                    {name: '单人间预计消费日期跨度', type: 'pie', center: ['20%', '30%'], radius: '11%', z: 100},
+                    {name: '单人间预订提前值', type: 'pie', center: ['20%', '60%'], radius: '11%', z: 100},
+                    {name: '标准间预计消费日期跨度', type: 'pie', center: ['48%', '30%'], radius: '11%', z: 100},
+                    {name: '标准间预订提前值', type: 'pie', center: ['48%', '60%'], radius: '11%', z: 100},
+                    {name: '套间预计消费日期跨度', type: 'pie', center: ['75%', '30%'], radius: '11%', z: 100},
+                    {name: '套间预订提前值', type: 'pie', center: ['75%', '60%'], radius: '11%', z: 100}
+                ]
+            },
+            options: [
+                {
+                    title: {text: '近7日内预订不入住情况统计'},
+                    series: [
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.44},
+                                {name: '2-3天', value: 0.36},
+                                {name: '4-7天', value: 0.18},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.25},
+                                {name: '4-7天', value: 0.60},
+                                {name: '8-14天', value: 0.11},
+                                {name: '15天以上', value: 0.04}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.25},
+                                {name: '2-3天', value: 0.28},
+                                {name: '4-7天', value: 0.35},
+                                {name: '7天以上', value: 0.12}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.14},
+                                {name: '4-7天', value: 0.35},
+                                {name: '8-14天', value: 0.45},
+                                {name: '15天以上', value: 0.46}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.36},
+                                {name: '2-3天', value: 0.39},
+                                {name: '4-7天', value: 0.18},
+                                {name: '7天以上', value: 0.07}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.19},
+                                {name: '4-7天', value: 0.16},
+                                {name: '8-14天', value: 0.36},
+                                {name: '15天以上', value: 0.29}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近30日内预订不入住情况统计'},
+                    series: [
+                    	{data: 
+                            [ 
+                                {name: '1天', value: 0.21},
+                                {name: '2-3天', value: 0.53},
+                                {name: '4-7天', value: 0.24},
+                                {name: '7天以上', value: 0.02}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.06},
+                                {name: '4-7天', value: 0.58},
+                                {name: '8-14天', value: 0.30},
+                                {name: '15天以上', value: 0.06}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.20},
+                                {name: '2-3天', value: 0.35},
+                                {name: '4-7天', value: 0.42},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.13},
+                                {name: '4-7天', value: 0.33},
+                                {name: '8-14天', value: 0.45},
+                                {name: '15天以上', value: 0.09}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.45},
+                                {name: '2-3天', value: 0.52},
+                                {name: '4-7天', value: 0.02},
+                                {name: '7天以上', value: 0.01}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.03},
+                                {name: '4-7天', value: 0.42},
+                                {name: '8-14天', value: 0.45},
+                                {name: '15天以上', value: 0.10}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title : {text: '近90日内预订不入住情况统计'},
+                    series: [
+                    	{data: 
+                            [ 
+                                {name: '1天', value: 0.16},
+                                {name: '2-3天', value: 0.59},
+                                {name: '4-7天', value: 0.20},
+                                {name: '7天以上', value: 0.05}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.05},
+                                {name: '4-7天', value: 0.61},
+                                {name: '8-14天', value: 0.30},
+                                {name: '15天以上', value: 0.04}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.19},
+                                {name: '2-3天', value: 0.43},
+                                {name: '4-7天', value: 0.35},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.15},
+                                {name: '4-7天', value: 0.36},
+                                {name: '8-14天', value: 0.43},
+                                {name: '15天以上', value: 0.08}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.19},
+                                {name: '2-3天', value: 0.43},
+                                {name: '4-7天', value: 0.35},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.15},
+                                {name: '4-7天', value: 0.36},
+                                {name: '8-14天', value: 0.43},
+                                {name: '15天以上', value: 0.08}
+                            ]
+                        },
+                    ]
+                },
+                {
+                    title : {text: '近365日内预订不入住情况统计'},
+                    series: [
+                    	{data: 
+                            [ 
+                                {name: '1天', value: 0.35},
+                                {name: '2-3天', value: 0.46},
+                                {name: '4-7天', value: 0.18},
+                                {name: '7天以上', value: 0.01}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.04},
+                                {name: '4-7天', value: 0.59},
+                                {name: '8-14天', value: 0.27},
+                                {name: '15天以上', value: 0.06}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.29},
+                                {name: '2-3天', value: 0.37},
+                                {name: '4-7天', value: 0.31},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.13},
+                                {name: '4-7天', value: 0.34},
+                                {name: '8-14天', value: 0.46},
+                                {name: '15天以上', value: 0.07}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1天', value: 0.19},
+                                {name: '2-3天', value: 0.43},
+                                {name: '4-7天', value: 0.35},
+                                {name: '7天以上', value: 0.03}
+                            ]
+                        },
+                        {data: 
+                            [ 
+                                {name: '1-3天', value: 0.15},
+                                {name: '4-7天', value: 0.36},
+                                {name: '8-14天', value: 0.43},
+                                {name: '15天以上', value: 0.08}
+                            ]
+                        },
+                    ]
+                }
+            ]
+        };
+    
+    myChart7.setOption(option);   
+	/*$.ajax({
+		url:"http://localhost:8080/HostelWorld/hostelStatistics",
+		"type":"GET",
+		"dataType":"json",
+		"contentType": "application/json; charset=utf-8",
+		"success": function(data){
+			var temp = eval(data);
+			//alert(temp[0].hostelName);
+			var single = temp.single;
+			document.getElementById('single').innerHTML =single;
+			var standard = temp.standard;
+			document.getElementById('standard').innerHTML =standard;
+			var suite = temp.suite;
+			document.getElementById('suite').innerHTML =suite;
+			var balance = temp.balance;
+			document.getElementById('balance').innerHTML =balance;
+
+			var list = temp.list;
+			
+			var length = list.length;
+			if(length >=1 ){
+				for(var i=0;i<length;i++){
+					var insertText = "<a href='#' onclick='getID(this)' class='list-group-item'>"+
+		 			"<h4 class='list-group-item-heading'>订单编号：<span>"+list[i].bookID+"</span>"+
+		 			"</h4>"+
+		 			"<label>预订时间：<span>"+list[i].bookTime+"</span></label>"+"<p></p>"+
+		 			"<label'>酒店编号：<span>"+list[i].hostelID+"</span></label>"+
+		 			"<label' style='margin-left: 30px'>房间种类：<span>"+list[i].category+"</span></label>"+
+		 			"<label' style='margin-left: 30px'>总共消费：<span>"+list[i].cost+"</span></label>"+"<p></p>"+
+		 			"<label'>开始日期：<span>"+list[i].startDate+"</span></label>"+
+		 			"<label' style='margin-left: 30px'>结束日期：<span>"+list[i].endDate+"</span></label>"+
+		 		"</a>";
+					document.getElementById('orderList').innerHTML += insertText;
+				}
+			}
+			else if(length==0){
+				document.getElementById('orderList').innerHTML='<div class="alert alert-danger" role="alert" style="text-align: center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>暂时没有相关订单信息！<a href="http://localhost:8080/web/home.html"><strong>   返回首页   </strong></a></div>';
+			}
+		},
+		"error":function(data){
+			document.getElementById('orderList').innerHTML='<div class="alert alert-danger" role="alert" style="text-align: center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>暂时没有相关订单信息！<a href="http://localhost:8080/web/home.html"><strong>   返回首页   </strong></a></div>';
+		}
+	});*/
+});
+</script>
+</body>
+</html>

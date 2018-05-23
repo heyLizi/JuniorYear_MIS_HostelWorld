@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>营业金额统计</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/echarts.min.js"></script>
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+</head>
+<body>
+<!--header-->
+	<div class="navigation">
+			<div class="container-fluid">
+				<nav class="pull">
+					<ul>
+						<li><a  href="/HostelWorld/home?id=0">主页</a></li>
+						<li><a  href="about.html">关于我们</a></li>
+						<li><a  href="/HostelWorld/home?id=5">个人页面</a></li>
+					</ul>
+				</nav>			
+			</div>
+		</div>
+
+<div class="header">
+	<div class="container">
+		<!--logo-->
+			<div class="logo">
+				<h1><a href="index.html">客栈之家</a></h1>
+			</div>
+		<!--//logo-->
+		<div class="top-nav">
+			<ul class="right-icons">
+				<li><a  href="http://localhost:8080/HostelWorld/logout"><i class="glyphicon glyphicon-user"> </i>注销</a></li>
+				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a></li>
+				
+			</ul>
+			<div class="nav-icon">
+				<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
+						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>
+					</div>	
+			</div>
+		<div class="clearfix"> </div>
+			<!---pop-up-box---->
+				    
+				<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!---//pop-up-box---->
+				<div id="small-dialog" class="mfp-hide">
+					    <!----- tabs-box ---->
+				<div class="sap_tabs">	
+				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+						  <ul class="resp-tabs-list">
+						  	  <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>All Homes</span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>For Sale</span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>For Rent</span></li>
+							  <div class="clearfix"></div>
+						  </ul>				  	 
+						  <div class="resp-tabs-container">
+						  		<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>All Homes</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+								 	<div class="facts">
+									  	<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div>        
+							        </div>
+						  		</div>
+							     <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>For Sale</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+									<div class="facts">									
+										<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div> 
+							        </div>	
+								 </div>									
+							      <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>For Rent</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+									 <div class="facts">
+										<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div> 
+							         </div>	
+							    </div>
+					      </div>
+					 </div>
+					 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+				    	<script type="text/javascript">
+						    $(document).ready(function () {
+						        $('#horizontalTab').easyResponsiveTabs({
+						            type: 'default', //Types: default, vertical, accordion           
+						            width: 'auto', //auto or any width like 600px
+						            fit: true   // 100% fit in a container
+						        });
+						    });
+			  			 </script>	
+				</div>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+					
+	
+		</div>
+		<div class="clearfix"> </div>
+		</div>	
+</div>
+<!--//-->	
+<div class=" banner-buying">
+	<div class=" container">
+	<h3><span>营业金额统计</span></h3> 
+	<!---->
+	<div class="menu-right">
+		 <ul class="menu">
+			<li class="item1"><a href="#"> <span style="margin-right:10px;"></span>选项<i class="glyphicon glyphicon-menu-down"> </i> </a>
+			<ul class="cute">
+				<li class="subitem3"><a href="/HostelWorld/home?id=4">酒店信息</a></li>
+				<li class="subitem1"><a href="/HostelWorld/home?id=20">发布促销计划 </a></li>
+				<li class="subitem2"><a href="/HostelWorld/home?id=12">我的促销计划 </a></li>
+				<li class="subitem4"><a href="/HostelWorld/home?id=15">入住办理</a></li>
+				<li class="subitem5"><a href="/HostelWorld/home?id=16">离宿办理</a></li>
+				<li class="subitem6"><a href="/HostelWorld/home?id=18">预订、结算情况统计</a></li>
+				<li class="subitem7"><a href="/HostelWorld/home?id=23">营业金额统计</a></li>
+				<li class="subitem8"><a href="/HostelWorld/home?id=24">优惠计划统计</a></li>
+			</ul>
+		</li>
+		</ul>
+	</div>
+	<div class="clearfix"> </div>
+		<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+      		
+	</div>
+</div>
+<!--//header-->
+<div class="contact">
+	<div class="container">
+		 <div style="margin:auto, 0px;">
+		 <h3>销售金额统计</h3>
+		 <div id="eCharts-0" style="width:600px; height:400px; margin-left:240px; margin-top:10px;"></div>
+		 <div id="timeChoose" style="margin-left:320px; margin-top:20px;">时间选择
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios1" value="1周内" checked = "checked">1周内
+			</label>
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios2" value="1月内">1月内
+			</label>
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios3" value="3月内">3月内
+			</label>
+			<label class="checkbox-inline">
+				<input type="radio" name="optionsRadios" id="optionsRadios4" value="1年内">1年内
+			</label>
+		</div>
+		 <div style="margin-left:390px; margin-top:20px; font-family: 'Montserrat-Regular'; font-weight:bold; font-size:32px;">销售金额情况查看</div>
+		 <div id="eCharts-1" style="width:600px; height:400px; margin-left:240px; margin-top:10px;"></div>
+		 <div id="eCharts-2" style="width:600px; height:400px; margin-left:240px; margin-top:10px;"></div>
+		 <div id="eCharts-3" style="width:600px; height:400px; margin-left:240px; margin-top:10px;"></div>
+		 <div id="eCharts-4" style="width:600px; height:400px; margin-left:240px; margin-top:10px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="container">
+		<div class="footer-top-at">
+			<div class="col-md-3 amet-sed">
+				<h4>Our Company</h4>
+				<ul class="nav-bottom">
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="blog.html">For Sale By Owner Blog</a></li>
+					<li><a href="mobile_app.html">Mobile</a></li>
+					<li><a href="terms.html">Terms & Conditions</a></li>
+					<li><a href="privacy.html">Privacy Policy</a></li>	
+					<li><a href="blog.html">Blog</a></li>
+					
+				</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Work With Us</h4>
+					<ul class="nav-bottom">
+						<li><a href="single.html">Real Estate Brokers</a></li>
+						<li><a href="single.html">Business Development</a></li>
+						<li><a href="single.html">Affiliate Programs</a></li>
+						<li><a href="contact.html">Sitemap</a></li>
+						<li><a href="career.html">Careers</a></li>
+						<li><a href="feedback.html">Feedback</a></li>	
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed">
+				<h4>Customer Support</h4>
+				<p>Mon-Fri, 7AM-7PM </p>
+				<p>Sat-Sun, 8AM-5PM </p>
+				<p>177-869-6559</p>
+					<ul class="nav-bottom">
+						<li><a href="#">Live Chat</a></li>
+						<li><a href="faqs.html">Frequently Asked Questions</a></li>
+						<li><a href="suggestion.html">Make a Suggestion</a></li>
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Property Services</h4>
+				   <ul class="nav-bottom">
+						<li><a href="single.html">Residential Property</a></li>
+						<li><a href="single.html">Commercial Property</a></li>
+						<li><a href="login.html">Login</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="typo.html">Short Codes</a></li>	
+					</ul>	
+					<ul class="social">
+						<li><a href="#"><i> </i></a></li>
+						<li><a href="#"><i class="gmail"> </i></a></li>
+						<li><a href="#"><i class="twitter"> </i></a></li>
+						<li><a href="#"><i class="camera"> </i></a></li>
+						<li><a href="#"><i class="dribble"> </i></a></li>
+					</ul>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--//footer-->
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+    function dataFormatter(obj) {
+        var pList = ['单人间','标准间','套间'];
+        var temp;
+        var dayList = [7, 30, 90, 365];
+        for (var i=0; i<dayList.length; i++) {
+            var day = dayList[i];
+            temp = obj[day];
+            for (var j=0, l=temp.length; j<l; j++) {
+                obj[day][j] = {
+                    name : pList[j],
+                    value : temp[j]
+                }
+            }
+        }
+        return obj;
+    }
+
+    var globalID = 7; // 用来标注是7, 30, 90, 365
+    		
+    $('#optionsRadios1').click(function(){
+		globalID = 7;
+		repaint();
+	});
+    $('#optionsRadios2').click(function(){
+		globalID = 30;
+		repaint();
+	});
+    $('#optionsRadios3').click(function(){
+		globalID = 90;
+		repaint();
+	});
+    $('#optionsRadios4').click(function(){
+		globalID = 365;
+		repaint();
+	});
+
+
+    var dataMap1 = {};
+    
+    dataMap1.dataLevelTotal = dataFormatter({ // 不同会员等级销售额的总数 
+        365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataLevelTotal['7sum'] = 0.2174+0.3904+0.1552;
+    dataMap1.dataLevelTotal['30sum'] = 1.3512+1.8242+1.8196;
+    dataMap1.dataLevelTotal['90sum'] = 4.6942+7.2790+4.0364;
+    dataMap1.dataLevelTotal['365sum'] = 18.9708+29.6852+14.9434;
+    
+    dataMap1.dataLevel0 = dataFormatter({ //会员等级0（非会员）
+        365:[4.0072, 8.0036, 4.9056],
+        90:[0.9862, 1.9960, 1.2316],
+        30:[0.3276, 0.5074, 0.3064],
+        7:[0.0858, 0.1236, 0.0776]
+    });
+    dataMap1.dataLevel0['7sum'] = 0.0858+0.1236+0.0776;
+    dataMap1.dataLevel0['30sum'] = 0.3276+0.5074+0.3064;
+    dataMap1.dataLevel0['90sum'] = 0.9862+1.9960+1.2316;
+    dataMap1.dataLevel0['365sum'] = 4.0072+8.0036+4.9056;
+    
+    dataMap1.dataLevel1 = dataFormatter({ //会员等级1
+        365:[2.2464, 3.7680, 1.4532],
+        90:[0.5616, 0.9458, 0.3078],
+        30:[0.1404, 0.2368, 0.0776],
+        7:[0.0376, 0.0564, 0]
+    });
+    dataMap1.dataLevel1['7sum'] = 0.0376+0.0564+0;
+    dataMap1.dataLevel1['30sum'] = 0.1404+0.2368+0.0776;
+    dataMap1.dataLevel1['90sum'] = 0.5616+0.9458+0.3078;
+    dataMap1.dataLevel1['365sum'] = 2.2464+3.7680+1.4532;
+
+    dataMap1.dataLevel2 = dataFormatter({ //会员等级2
+        365:[4.3580, 6.0096, 1.1652],
+        90:[1.1320, 1.5292, 0.4088],
+        30:[0.2820, 0.3840, 0.1552],
+        7:[0.0564, 0.0768, 0]
+    });
+    dataMap1.dataLevel2['7sum'] = 0.0564+0.0768+0;
+    dataMap1.dataLevel2['30sum'] = 0.2820+0.3840+0.1552;
+    dataMap1.dataLevel2['90sum'] = 1.1320+1.5292+0.4088;
+    dataMap1.dataLevel2['365sum'] = 4.3580+6.0096+1.1652;
+
+    dataMap1.dataLevel3 = dataFormatter({ //会员等级3
+        365:[5.3020, 7.0040, 4.1782],
+        90:[1.3056, 1.6320, 1.2034],
+        30:[0.4320, 0.3840, 0.3104],
+        7:[0.0188, 0.0760, 0.0388]
+    });
+    dataMap1.dataLevel3['7sum'] = 0.0188+0.0760+0.0388;
+    dataMap1.dataLevel3['30sum'] = 0.4320+0.3840+0.3104;
+    dataMap1.dataLevel3['90sum'] = 1.3056+1.6320+1.2034;
+    dataMap1.dataLevel3['365sum'] = 5.3020+7.0040+4.1782;
+    
+    dataMap1.dataLevel4 = dataFormatter({ //会员等级4
+        365:[1.9420, 2.4680, 2.2360],
+        90:[0.4520, 0.6720, 0.5780],
+        30:[0.0940, 0.1680, 0.1552],
+        7:[0.0188, 0.0288, 0.0388]
+    });
+    dataMap1.dataLevel4['7sum'] = 0.0188+0.0288+0.0388;
+    dataMap1.dataLevel4['30sum'] = 0.0940+0.1680+0.1552;
+    dataMap1.dataLevel4['90sum'] = 0.4520+0.6720+0.5780;
+    dataMap1.dataLevel4['365sum'] = 1.9420+2.4680+2.2360;
+
+    dataMap1.dataLevel5 = dataFormatter({ //会员等级5
+        365:[1.1152, 2.4320, 1.0052],
+        90:[0.2568, 0.5040, 0.3068],
+        30:[0.0752, 0.1440, 0.1164],
+        7:[0, 0.0288, 0]
+    });
+    dataMap1.dataLevel5['7sum'] = 0+0.0288+0;
+    dataMap1.dataLevel5['30sum'] = 0.0752+0.1440+0.1164;
+    dataMap1.dataLevel5['90sum'] = 0.2568+0.5040+0.3068;
+    dataMap1.dataLevel5['365sum'] = 1.1152+2.4320+1.0052;
+    
+    dataMap1.dataPromotionTotal = dataFormatter({ // 不同优惠计划销售额的总数 
+    	365:[18.9708, 29.6852, 14.9434],
+        90:[4.6942, 7.2790, 4.0364],
+        30:[1.3512, 1.8242, 1.8196],
+        7:[0.2174, 0.3904, 0.1552]
+    });
+    dataMap1.dataPromotionTotal['7sum'] = 0.2174+0.3904+0.1552;
+    dataMap1.dataPromotionTotal['30sum'] = 1.3512+1.8242+1.8196;
+    dataMap1.dataPromotionTotal['90sum'] = 4.6942+7.2790+4.0364;
+    dataMap1.dataPromotionTotal['365sum'] = 18.9708+29.6852+14.9434;
+    
+    dataMap1.dataPromotion = dataFormatter({ //有优惠计划
+        365:[8.4808, 11.6342, 5.9848],
+        90:[2.0048, 2.9542, 1.0068],
+        30:[0.5816, 0.6036, 0.6068],
+        7:[0.0728, 0.1104, 0.1086]
+    });
+    dataMap1.dataPromotion['7sum'] = 0.0728+0.1104+0.1086;
+    dataMap1.dataPromotion['30sum'] = 0.5816+0.6036+0.6068;
+    dataMap1.dataPromotion['90sum'] = 2.0048+2.9542+1.0068;
+    dataMap1.dataPromotion['365sum'] = 8.4808+11.6342+5.9848;
+
+    dataMap1.dataPromotionBook = dataFormatter({ //有优惠计划且预订
+        365:[5.7756, 6.6458, 3.7842],
+        90:[1.2468, 1.9428, 0.7068],
+        30:[0.3432, 0.3664, 0.3428],
+        7:[0.0568, 0.0468, 0.0836]
+    });
+    dataMap1.dataPromotionBook['7sum'] = 0.0568+0.0468+0.0836;
+    dataMap1.dataPromotionBook['7sumSingle'] = 0.0568;
+    dataMap1.dataPromotionBook['7sumStandard'] = 0.0468;
+    dataMap1.dataPromotionBook['7sumSuite'] = 0.0836;
+    dataMap1.dataPromotionBook['30sum'] = 0.3432+0.3664+0.3428;
+    dataMap1.dataPromotionBook['30sumSingle'] = 0.3432;
+    dataMap1.dataPromotionBook['30sumStandard'] = 0.3664;
+    dataMap1.dataPromotionBook['30sumSuite'] = 0.3428;
+    dataMap1.dataPromotionBook['90sum'] = 1.2468+1.9428+0.7068;
+    dataMap1.dataPromotionBook['90sumSingle'] = 1.2468;
+    dataMap1.dataPromotionBook['90sumStandard'] = 1.9428;
+    dataMap1.dataPromotionBook['90sumSuite'] = 0.7068;
+    dataMap1.dataPromotionBook['365sum'] = 5.7756+6.6458+3.7842;
+    dataMap1.dataPromotionBook['365sumSingle'] = 5.7756;
+    dataMap1.dataPromotionBook['365sumStandard'] = 6.6458;
+    dataMap1.dataPromotionBook['365sumSuite'] = 3.7842;
+
+    dataMap1.dataPromotionNoBook = dataFormatter({ //有优惠计划但无预订
+        365:[2.7052, 4.9884, 2.2006],
+        90:[0.7580, 1.0114, 0.3000],
+        30:[0.2384, 0.2672, 0.2640],
+        7:[0.0160, 0.0636, 0.0250]
+    });
+    dataMap1.dataPromotionNoBook['7sum'] = 0.0160+0.0636+0.0250;
+    dataMap1.dataPromotionNoBook['7sumSingle'] = 0.0160;
+    dataMap1.dataPromotionNoBook['7sumStandard'] = 0.0636;
+    dataMap1.dataPromotionNoBook['7sumSuite'] = 0.0250;
+    dataMap1.dataPromotionNoBook['30sum'] = 0.2384+0.2672+0.2640;
+    dataMap1.dataPromotionNoBook['30sumSingle'] = 0.2384;
+    dataMap1.dataPromotionNoBook['30sumStandard'] = 0.2672;
+    dataMap1.dataPromotionNoBook['30sumSuite'] = 0.2640;
+    dataMap1.dataPromotionNoBook['90sum'] = 0.7580+1.0114+0.3000;
+    dataMap1.dataPromotionNoBook['90sumSingle'] = 0.7580;
+    dataMap1.dataPromotionNoBook['90sumStandard'] = 1.0114;
+    dataMap1.dataPromotionNoBook['90sumSuite'] = 0.3000;
+    dataMap1.dataPromotionNoBook['365sum'] = 2.7052+4.9884+2.2006;
+    dataMap1.dataPromotionNoBook['365sumSingle'] = 2.7052;
+    dataMap1.dataPromotionNoBook['365sumStandard'] = 4.9884;
+    dataMap1.dataPromotionNoBook['365sumSuite'] = 2.2006;
+    
+    dataMap1.dataNoPromotion = dataFormatter({ //无优惠计划
+        365:[10.4900, 18.0510, 8.9586],
+        90:[2.6894, 4.3248, 3.0296],
+        30:[0.7696, 1.2206, 1.2128],
+        7:[0.1446, 0.2800, 0.0466]
+    });
+    dataMap1.dataNoPromotion['7sum'] = 0.1446+0.2800+0.0466;
+    dataMap1.dataNoPromotion['30sum'] = 0.7696+1.2206+1.2128;
+    dataMap1.dataNoPromotion['90sum'] = 2.6894+4.3248+3.0296;
+    dataMap1.dataNoPromotion['365sum'] = 10.4900+18.0510+8.9586;
+
+    dataMap1.dataNoPromotionBook = dataFormatter({ //无优惠计划且预订
+        365:[6.7568, 10.5648, 4.4272],
+        90:[1.4476, 2.5624, 1.7012],
+        30:[0.3932, 0.6468, 0.6416],
+        7:[0.0752, 0.1468, 0.0216]
+    });
+    dataMap1.dataNoPromotionBook['7sum'] = 0.0752+0.1468+0.0216;
+    dataMap1.dataNoPromotionBook['7sumSingle'] = 0.0752;
+    dataMap1.dataNoPromotionBook['7sumStandard'] = 0.0468;
+    dataMap1.dataNoPromotionBook['7sumSuite'] = 0.0216;
+    dataMap1.dataNoPromotionBook['30sum'] = 0.3932+0.6468+0.6416;
+    dataMap1.dataNoPromotionBook['30sumSingle'] = 0.3932;
+    dataMap1.dataNoPromotionBook['30sumStandard'] = 0.6468;
+    dataMap1.dataNoPromotionBook['30sumSuite'] = 0.6416;
+    dataMap1.dataNoPromotionBook['90sum'] = 1.4476+2.5624+1.7012;
+    dataMap1.dataNoPromotionBook['90sumSingle'] = 1.4476;
+    dataMap1.dataNoPromotionBook['90sumStandard'] = 2.5624;
+    dataMap1.dataNoPromotionBook['90sumSuite'] = 1.7012;
+    dataMap1.dataNoPromotionBook['365sum'] = 6.7568+10.5648+4.4272;
+    dataMap1.dataNoPromotionBook['365sumSingle'] = 6.7568;
+    dataMap1.dataNoPromotionBook['365sumStandard'] = 10.5648;
+    dataMap1.dataNoPromotionBook['365sumSuite'] = 4.4272;
+
+    dataMap1.dataNoPromotionNoBook = dataFormatter({ //无优惠计划且无预订
+        365:[3.7332, 7.4862, 4.5314],
+        90:[1.2418, 1.7624, 1.3284],
+        30:[0.3764, 0.5738, 0.5712],
+        7:[0.0694, 0.1332, 0.0250]
+    });
+    
+    dataMap1.dataNoPromotionNoBook['7sum'] = 0.0694+0.1332+0.0250;
+    dataMap1.dataNoPromotionNoBook['7sumSingle'] = 0.0694;
+    dataMap1.dataNoPromotionNoBook['7sumStandard'] = 0.1332;
+    dataMap1.dataNoPromotionNoBook['7sumSuite'] = 0.0250;
+    dataMap1.dataNoPromotionNoBook['30sum'] = 0.3764+0.5738+0.5712;
+    dataMap1.dataNoPromotionNoBook['30sumSingle'] = 0.3764;
+    dataMap1.dataNoPromotionNoBook['30sumStandard'] = 0.5738;
+    dataMap1.dataNoPromotionNoBook['30sumSuite'] = 0.5712;
+    dataMap1.dataNoPromotionNoBook['90sum'] = 1.2418+1.7624+1.3284;
+    dataMap1.dataNoPromotionNoBook['90sumSingle'] = 1.2418;
+    dataMap1.dataNoPromotionNoBook['90sumStandard'] = 1.7624;
+    dataMap1.dataNoPromotionNoBook['90sumSuite'] = 1.3284;
+    dataMap1.dataNoPromotionNoBook['365sum'] = 3.7332+7.4862+4.5314;
+    dataMap1.dataNoPromotionNoBook['365sumSingle'] = 3.7332;
+    dataMap1.dataNoPromotionNoBook['365sumStandard'] = 7.4862;
+    dataMap1.dataNoPromotionNoBook['365sumSuite'] = 4.5314;
+    
+    
+	repaint();
+
+    
+	function repaint(){
+		
+		var myChart0 = echarts.init(document.getElementById('eCharts-0'));
+		option = {
+			    title: {
+			        text: '日均收入趋势'
+			    },
+			    tooltip: {
+			        trigger: 'axis'
+			    },
+			    legend: {
+			        data:['日均收入','日均会员卡收入','日均现金收入']
+			    },
+			    grid: {
+			        left: '3%',
+			        right: '4%',
+			        bottom: '3%',
+			        containLabel: true
+			    },
+			    toolbox: {
+			        feature: {
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis: {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2016-06','2016-09','2016-12','2017-03','2017-06']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {
+			            name:'日均收入',
+			            type:'line',
+			            stack: '总量',
+			            data:[580, 632, 601, 634, 790]
+			        },
+			        {
+			            name:'日均会员卡收入',
+			            type:'line',
+			            stack: '总量',
+			            data:[430, 460, 401, 434, 430]
+			        },
+			        {
+			            name:'日均现金收入',
+			            type:'line',
+			            stack: '总量',
+			            data:[150, 172, 200, 200, 360]
+			        },
+			    ]
+			};
+		myChart0.setOption(option);
+		
+		var myChart1 = echarts.init(document.getElementById('eCharts-1'));
+	    
+	    option = {
+	   		title : {
+	   	        text: '不同会员等级的销售金额占比',
+	   	        x:'center'
+	   	    },
+	   	    tooltip: {
+	   	        trigger: 'item',
+	   	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	   	    },
+	   	    legend: {
+	   	        orient: 'vertical',
+	   	        x: 'left',
+	   	        data:['非会员','会员等级1','会员等级2','会员等级3','会员等级4','会员等级5']
+	   	    },
+	   	    series: [
+	   	        {
+	   	            name:'销售金额',
+	   	            type:'pie',
+	   	            selectedMode: 'single',
+	   	            radius: [0, '30%'],
+
+	   	            label: {
+	   	                normal: {
+	   	                    position: 'inner'
+	   	                }
+	   	            },
+	   	            labelLine: {
+	   	                normal: {
+	   	                    show: false
+	   	                }
+	   	            },
+	   	            data:[
+	   	            	{value:dataMap1.dataLevel0[globalID+'sum'], name:'非会员', selected:true},
+	   	                {value:dataMap1.dataLevelTotal[globalID+'sum']-dataMap1.dataLevel0[globalID+'sum'], name:'会员'}
+	   	            ]
+	   	        },
+	   	        {
+	   	            name:'销售金额',
+	   	            type:'pie',
+	   	            radius: ['40%', '55%'],
+
+	   	            data:[
+	   	            	{value:dataMap1.dataLevel0[globalID+'sum'], name:'会员等级0'},
+	   	                {value:dataMap1.dataLevel1[globalID+'sum'], name:'会员等级1'},
+	   	                {value:dataMap1.dataLevel2[globalID+'sum'], name:'会员等级2'},
+	   	                {value:dataMap1.dataLevel3[globalID+'sum'], name:'会员等级3'},
+	   	                {value:dataMap1.dataLevel4[globalID+'sum'], name:'会员等级4'},
+	   	                {value:dataMap1.dataLevel5[globalID+'sum'], name:'会员等级5'},
+	   	            ]
+	   	        }
+	   	    ]
+	   	};
+	    
+	    myChart1.setOption(option);
+	   
+	    
+	    var myChart2 = echarts.init(document.getElementById('eCharts-2'));
+	    
+	    option = {
+	   	    title : {
+	   	        text: '优惠计划、房间类型、有无预订多个维度的销售金额占比',
+	   	        x:'center'
+	   	    },
+	   	 tooltip: {
+	         trigger: 'item',
+	         formatter: "{a} <br/>{b}: {c} ({d}%)"
+	     },
+	     legend: {
+	         orient: 'vertical',
+	         x: 'left',
+	         //data:['有优惠计划且预订','有优惠计划但无预订','无优惠计划且预订','无优惠计划且未预订']
+	     },
+	     series: [
+	         {
+	             name:'销售金额',
+	             type:'pie',
+	             selectedMode: 'single',
+	             radius: [0, '30%'],
+
+	             label: {
+	                 normal: {
+	                     position: 'inner'
+	                 }
+	             },
+	             labelLine: {
+	                 normal: {
+	                     show: false
+	                 }
+	             },
+	             data:[
+	                 {value:dataMap1.dataPromotion[globalID+'sum'], name:'有优惠计划'},
+	                 {value:dataMap1.dataNoPromotion[globalID+'sum'], name:'无优惠计划'},
+	             ]
+	         },
+	         {
+	             name:'销售金额',
+	             type:'pie',
+	             radius: ['40%', '55%'],
+
+	             data:[
+	                 {value:dataMap1.dataPromotionBook[globalID+'sum'], name:'有优惠计划且预订'},
+	                 {value:dataMap1.dataPromotionNoBook[globalID+'sum'], name:'有优惠计划但无预订'},
+	                 {value:dataMap1.dataNoPromotionBook[globalID+'sum'], name:'无优惠计划且预订'},
+	                 {value:dataMap1.dataNoPromotionNoBook[globalID+'sum'], name:'无优惠计划且未预订'},
+	             ]
+	         },
+	         {
+	             name:'销售金额',
+	             type:'pie',
+	             radius: ['60%', '80%'],
+
+	             data:[
+	            	 {value:dataMap1.dataPromotionBook[globalID+'sumSingle'], name:'单人间、有优惠、预订'},
+	            	 {value:dataMap1.dataPromotionBook[globalID+'sumStandard'], name:'标准间、有优惠、预订'},
+	            	 {value:dataMap1.dataPromotionBook[globalID+'sumSuite'], name:'套间、有优惠、预订'},
+	                 {value:dataMap1.dataPromotionNoBook[globalID+'sumSingle'], name:'单人间、有优惠、无预订'},
+	                 {value:dataMap1.dataPromotionNoBook[globalID+'sumStandard'], name:'标准间、有优惠、无预订'},
+	                 {value:dataMap1.dataPromotionNoBook[globalID+'sumSuite'], name:'套间、有优惠、无预订'},
+	                 {value:dataMap1.dataNoPromotionBook[globalID+'sumSingle'], name:'单人间、无优惠、预订'},
+	                 {value:dataMap1.dataNoPromotionBook[globalID+'sumStandard'], name:'标准间、无优惠、预订'},
+	                 {value:dataMap1.dataNoPromotionBook[globalID+'sumSuite'], name:'套间、无优惠、预订'},
+	                 {value:dataMap1.dataNoPromotionNoBook[globalID+'sumSingle'], name:'单人间、无优惠、未预订'},
+	                 {value:dataMap1.dataNoPromotionNoBook[globalID+'sumStandard'], name:'标准间、无优惠、未预订'},
+	                 {value:dataMap1.dataNoPromotionNoBook[globalID+'sumSuite'], name:'套间、无优惠、未预订'},
+	             ]
+	         }
+	     ]
+	 };
+
+	myChart2.setOption(option);
+    }
+    
+    
+    
+
+});
+</script>
+</body>
+</html>
