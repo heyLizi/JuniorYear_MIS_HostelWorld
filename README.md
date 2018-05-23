@@ -1,2 +1,6 @@
 # JuniorYear_MIS_HostelWorld
-2017年 大三学年 MIS课程的作业——HostelWorld客栈管理系统的升级版，扩展为了管理信息系统
+2017年 大三学年 MIS课程的作业——HostelWorld客栈管理系统的升级版，扩展成为管理信息系统
+
+在项目JuniorYear_J2EE_HostelWorld的基础上进行开发，因此所需运行环境、sql文件和该项目保持一致。
+
+提交的代码是Model及数据处理、前端实现的部分，是为了完成预期功能，在原有代码上新添加的。不能单独运行，需要加到JuniorYear_J2EE_HostelWorld项目中运行。
